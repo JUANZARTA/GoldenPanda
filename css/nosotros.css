@@ -1,0 +1,29 @@
+
+/**4) Nosotros*/
+.content.nosotros {
+    background: linear-gradient(to right,  #0c1419, #000);
+}
+
+.nosotros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* Se cambia a "center" para centrar verticalmente */
+    padding-top: 50px;
+}
+  
+.nosotros-image {
+    margin-right: 0px;
+    margin-bottom: 30px;
+}
+
+.nosotros-image:hover {
+    box-shadow: 0px 0px 10px 5px rgba(12, 12, 9, 0.5); /* Agrega sombra blanca alrededor */
+}  
+  
+.nosotros-text {
+    max-width: 50%;
+    margin: 0 0px;
+    text-align: justify;
+    
+}

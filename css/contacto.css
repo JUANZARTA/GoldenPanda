@@ -1,0 +1,61 @@
+
+/**5) Contacto*/
+.contacto {
+    padding: 0px;
+    background: linear-gradient(to right,  #0c1420, #000); /*Degradado de izquierda a derecha*/
+}
+
+.box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.box-container .box {
+    height: 8rem;
+    width: 15rem;
+    background: #101a1f;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 .3rem 5rem rgba(0, 0 , 0, .5);
+    margin: 2rem;    
+}
+
+.box-container .box i {
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    background: #ffae00;
+    font-size: 2rem;
+    margin: 1rem 0;
+
+}
+
+.box-container .box i:hover {
+    color: #fff;
+    background:transparent;
+    text-shadow: 0 0 10px #ffae00, 0 0 20px #ffae00; 
+    font-size: 2.2rem;
+}
+
+.box-container .box h3 {
+    font-size: 20px;
+    font-weight: normal;
+    font-family: 'Fenix', sans-serif;
+    color: #ffffff;
+}
+
+.box-container .box h3:hover {
+    font-size: 22px;
+    text-shadow: 0 0 5px #ffae00, 0 0 20px #ffae00; 
+}
+
+.agradecimiento-text {
+    max-width: 80%;
+    margin: 0 0px;
+    text-align: justify;
+}

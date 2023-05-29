@@ -1,0 +1,48 @@
+.contacto {
+    padding: 0px;
+    background: linear-gradient(to right, #021015, #000509);
+  }
+  
+  .box-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Agregué esta propiedad para centrar verticalmente los iconos */
+    text-align: center;
+  }
+  
+  .box-container2 .box {
+    flex: 1; /* Utilicé flexbox para distribuir el espacio disponible de manera uniforme */
+    height: auto; /* Cambié la altura a "auto" para adaptarse al contenido */
+    background: none; /* Eliminé el fondo */
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: none; /* Eliminé la sombra */
+    margin: 0 1rem; /* Reduje el margen horizontal */
+  }
+  
+  .box-container2 .box i {
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    background: #ffae00;
+    font-size: 2rem;
+    margin: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .box-container2 .box i:hover {
+    color: #fff;
+    background: transparent;
+    text-shadow: 0 0 10px #ffae00, 0 0 50px #ffae00;
+    font-size: 2.2rem;
+  }
+  
+  .agradecimiento-text {
+    max-width: 80%;
+    margin: 0 0px;
+    text-align: justify;
+  }
+  

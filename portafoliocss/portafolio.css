@@ -1,0 +1,58 @@
+.portafolio {
+  background: linear-gradient(to right, #021015, #000509);
+}
+
+.portafolio .menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* Modificación para alinear los elementos en la parte inferior */
+  margin-top: 20px;
+}
+
+.portafolio .title {
+  margin-top: 100px; /* Ajusta el margen superior para bajar el título */
+}
+
+.gallery {
+  text-align: center;
+}
+
+.slider {
+  display: flex;
+  overflow: hidden;
+  max-width: 780px; /* Aumentamos el ancho máximo para que las imágenes se vean más grandes */
+  margin: 20 auto;
+}
+
+.slider img {
+  width: 100%; /* Cambiamos el valor a 100% para que las imágenes se ajusten al ancho del slider */
+  height: auto; /* Eliminamos la altura fija para mantener la proporción de aspecto */
+  object-fit: cover; /* Utilizamos object-fit para asegurar que las imágenes se ajusten sin deformarse */
+  transition: opacity 0.5s ease; /* Agregamos una transición suave para el efecto de movimiento */
+}
+
+.slider img.active {
+  opacity: 1; /* Cambié la opacidad a 1 para mostrar la imagen actual */
+}
+
+.prev-button,
+.next-button {
+  background-color: transparent;
+  color: white;
+  margin-top: 20px;
+}
+
+.prev-button {
+  margin-right: 20px;
+}
+
+.next-button {
+  margin-left: 20px;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  color: #fff; /* Cambia el color de texto al pasar el mouse */
+  text-shadow: 0 0 10px #ffae00, 0 0 20px #ffae00; /* Establece dos sombras para lograr el efecto neon */
+  background: none;
+}

@@ -1,0 +1,22 @@
+
+/**2) Servicios*/
+.servicios {
+    background: linear-gradient(to right, #021015, #000509);
+}
+
+
+.servcios-text {
+    width: 46%;
+    margin: 0 10px;
+    text-align: justify;
+}
+  
+.servcios-text-right {
+    float: right;
+    margin-right: 40px;
+}
+  
+.servcios-text-left {
+    float: left;
+    margin-left: 40px;
+}  

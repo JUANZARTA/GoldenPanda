@@ -1,0 +1,22 @@
+.contacto {
+    padding: 10px;
+    background: linear-gradient(to right, #021015, #000509);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    margin-top: 120px; /* Ajusta el valor según sea necesario */
+}
+
+.justificado:not(.subtitulo) {
+    text-align: justify;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+.contacto .subtitulo {
+    text-align: left;
+    margin-left: -500px;
+}

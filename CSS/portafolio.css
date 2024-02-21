@@ -1,0 +1,72 @@
+/* Servicios */
+.servicios {
+    background: linear-gradient(to right, var(--color-1), var(--color-2));   
+    height: 150px;
+}
+
+/* Marco */
+.portafolio{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around;
+    align-items: center;
+    padding: 3%;
+    padding-right: 12%;
+    padding-left: 12%;
+    background: linear-gradient(to right, var(--color-1),var(--color-2) );
+}
+.portafolio_servicio{
+    background: linear-gradient(to top left, var(--color-4),var(--color-3) );
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 50px;
+    border-radius: 20px;
+    width: 300px;
+    height: 250px;
+    position: relative; 
+}
+
+/* Boton */
+.ver-mas-btn {
+    background: linear-gradient(to bottom  right, var(--color-primario), var(--color-secundario2), var(--color-terciario)) ;
+    color: var(--color-negro);
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;    
+}
+.ver-mas-btn:hover {
+    background: linear-gradient(to top, var(--color-blanco),var(--color-secundario) );
+    color:var(--color-terciario);
+    font-weight: bold;
+    transition: 0.5.s;
+}
+
+/*Responsive para Tablet**/
+@media (max-width: 952px){
+    .portafolio{        
+        height: 120vh;
+    }
+    .portafolio_servicio{
+        width: 230px;
+        height: 290px;
+    }
+}
+/*Responsive para Celulares**/
+@media (max-width: 750px){
+    .portafolio{
+        margin-top: 180px;
+        margin-bottom: 20px;
+        flex-direction: column; 
+        height: 100px;
+        height: 3dvh;        
+    }
+    .portafolio_servicio {
+        margin-bottom: 20px;  
+        width: 300px;
+        height: 230px;
+    }
+}
+

@@ -1,0 +1,214 @@
+/*  Colores */
+:root {
+    --color-primario: #ffb30e;
+    --color-secundario: #ffedb3;
+    --color-secundario2: #ffe079;
+    --color-terciario: #cc7400;
+    --color-negro:#000000;
+    --color-blanco:#fff;
+    --color-1:#131313;
+    --color-2:#0f1114;
+    --color-3:#20202270;    
+    --color-4:#272c31;   
+    --color-5:#1c2024e5;
+}  
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Felix Titling', sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: linear-gradient(to right, var(--color-1),var(--color-2) );
+}
+
+/* Texto */
+h1, p, a {
+    color: var(--color-blanco);
+}
+a.parrafo4:visited {
+    color: var(--color-blanco);  /* Color blanco para los enlaces visitados */
+}
+.h1_servicios {
+    text-align: center;
+    font-family: 'Felix Titling', sans-serif;
+    color: var(--color-primario);
+    margin-bottom: -20px;
+    font-size: 200%;
+}
+.p_servicios {
+    text-align: justify;
+    font-family: 'arial', sans-serif;
+    margin-top: 50px;
+    font-size: 100%;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-transform: none;
+}
+.h2_portafolio {
+    text-align: center;
+    font-family: 'Fenix', sans-serif;
+    color: var(--color-blanco);
+    margin-top: -20px;
+}
+.p_portafolio {
+    text-align: center;
+    font-family: 'arial', sans-serif;
+    margin-top: 10px;
+    margin-left:0px;
+    margin-right: 0px;
+    text-transform: none;
+    font-size: 100%;
+}
+.p_portafolio_f {
+    text-align: center;
+    font-family: 'arial', sans-serif;
+    margin-top: 10px;
+    margin-left:0px;
+    margin-right: 0px;
+    text-transform: none;
+    font-size: 100%;
+}
+h3 {
+    font-family: 'arial', sans-serif;
+    font-size: 20px;
+    margin-top: 0px;
+}
+.h1_portafolio_2{    
+    text-align: center;
+    font-family: 'Felix Titling', sans-serif;
+    color: var(--color-primario);
+    margin-bottom: -20px;
+    font-size: 200%;
+}
+.p_portafolio_2{    
+    text-align: justify;
+    font-family: 'arial', sans-serif;
+    margin-top: 50px;
+    font-size: 100%;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-transform: none;
+}
+.p_portafolio_2::after {
+    content: '';
+    display: block;
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(to right, var(--color-primario),var(--color-secundario), var(--color-terciario));
+    position: absolute;
+    margin-top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.p_nosotros {
+    text-align: justify;
+    font-family: 'arial', sans-serif;
+    margin-top: 10px;
+    margin-left:100px;
+    margin-right: 100px;
+    text-transform: none;
+    font-size: 100%;
+}
+.p_footer{
+    text-align: left;
+    font-family: 'Fenix', sans-serif;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 10px;
+    text-transform: none;
+    text-decoration: none;
+}
+.credito{    
+    text-align: center;
+    font-family: 'Fenix', sans-serif;
+    text-transform: none;
+    color: var(--color-primario);
+}
+
+/* CSS - Nosotros*/
+.sobre-nosotros-image {
+    max-width: 40%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* CSS para centrar el video horizontalmente */
+.center-video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 40%;
+    height: auto;
+}
+
+
+
+/* Barra */
+::-webkit-scrollbar {
+    width: 15px; 
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-3); 
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-4);
+}
+::-webkit-scrollbar-track {
+    background-color: var(--color-negro);
+}
+
+/*Responsive para Tablet**/
+@media (max-width: 952px){
+    .p_servicios{
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+}
+/*Responsive para Celulares**/
+@media (max-width: 750px){
+    .h1_servicios {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    .p_servicios{
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .p_servicios{
+        margin-bottom: -150px;
+    }
+    .p_portafolio_f {
+        margin-right:40px;
+        margin-left:40px;
+    }
+    /* CSS - Nosotros*/    
+    .p_nosotros {
+        text-align: justify;
+        font-family: 'arial', sans-serif;
+        margin-top: 10px;
+        margin: 45px;
+        margin-right: 45px;
+        text-transform: none;
+        font-size: 100%;
+    }
+    .center-video {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 80%;
+        height: auto;
+    }
+    .sobre-nosotros-image {
+        max-width: 80%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+}
+}

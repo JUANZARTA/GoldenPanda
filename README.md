@@ -1,2 +1,0 @@
-# GoldenPanda
-Pagina Web

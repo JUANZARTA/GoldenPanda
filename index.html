@@ -1,184 +1,102 @@
 <!DOCTYPE html>
-<html lang="es"> <!--IDIOMA-->
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <!--ESTILOS CSS-->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/inicio.css">
-    <link rel="stylesheet" href="css/servicios.css">
-    <link rel="stylesheet" href="css/portafolio.css">
-    <link rel="stylesheet" href="css/nosotros.css">
-    <link rel="stylesheet" href="css/contacto.css">
-    <link rel="stylesheet" href="css/ref.css">
-    <title>Pagina web GOLDEN PANDA</title>
+    <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+    <title>Pagina Web</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/navbar.css">
+    <link rel="stylesheet" href="CSS/inicio.css">
+    <link rel="stylesheet" href="CSS/portafolio.css">
+    <link rel="stylesheet" href="CSS/contacto.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
-    <!--Barra Superior-->
-    <div class="head">
-        <!-- LOGO-->
-        <div class="logo">
-            <img  src="image/0.png" height="50px" width="100%" alt="logo">
-		</div>
-		<!--BARRA DE NAVEGRACION -->
-        <nav class="navbar">
-            <a href="#inicio">Inicio</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#portafolio">Portafolio</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#contacto">Contacto</a>   
-            <a href="terminos.html">Privacy Policy</a>        
-        </nav>
-    </div>
-    <!--Seccion 1: Inicio-->
+    <!--Barra de Navegacion-->
+    <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>            
+            </label>
+            <a href="index.html" class="enlace">
+                <img src="Image/Icono.png" alt="" class="icono_panda">
+            </a>
+            <ul>
+                <li><a class="active" href="index.html">Inicio</a></li>
+                <li><a class="active" href="#portafolio">Servicios</a></li>
+                <li><a class="active" href="#contacto">Contactos</a></li>      
+                <li><a class="active" href="html/nosotro.html">Nosotros</a></li> 
+            </ul>
+    </nav>
+    <!-- Seccion 1: Inicio -->
     <header class="content inicio" id="inicio">
-        <h2 class="title_i">GOLDEN PANDA</h2>
+        <div class="background-carousel">
+            <img src="Image/inicio/Imagen 1.jpg" alt="Imagen 1" class="carousel">
+            <img src="Image/inicio/Imagen 2.jpg" alt="Imagen 2" class="carousel">
+            <img src="Image/inicio/Imagen 3.jpg" alt="Imagen 3" class="carousel">            
+            <img src="Image/inicio/Imagen 4.jpg" alt="Imagen 3" class="carousel">            
+            <img src="Image/inicio/Imagen 5.jpg" alt="Imagen 3" class="carousel">          
+            <img src="Image/inicio/Imagen 6.jpg" alt="Imagen 3" class="carousel">
+        </div>
+        <h2 class="marca">GOLDEN PANDA</h2>
         <p class="slogan">Tu imaginación no tiene limites.</p>
-
         <div class="btn-home">
-            <a href="#nosotros" class="btn">Saber mas</a>
+            <a href="#nosotros" class="btn">mas Info</a>
         </div>
     </header>
-    <!--Seccion 2: Servicios-->
-    <section class="content servicios" id ="servicios">
-
-        <h2 class="title">Servicios</h2>
-      
-        <div class="servcios-container">
-      
-            <div class="servcios-text servcios-text-left">
-            <p><br><br>
-                Entre los servicios que ofrece Golden Panda, se encuentran la animación 2D y 3D, 
-                modelado de estructuras en 3D, diseño de personajes en 2D, ilustración, retratos 
-                personalizados, diseño de logo y presentación de logos en 3D. Además, ofrecen 
-                diseño de tarjetas de presentación, piezas gráficas, edición de fotografías, 
-                creación de videos publicitarios y creación de sitios web básicos.
-                <br><br>
-                En Golden Panda, se utilizan las mejores herramientas para asegurarse de que 
-                cada proyecto se lleve a cabo con la mejor calidad. Algunas de las aplicaciones 
-                que utiliza Golden Panda incluyen Filmora, OpenToonz, MediBang y Photoshop, entre otras.
-                <br><br>
-                Cada proyecto es único en Golden Panda, y se toma el tiempo para entender las necesidades 
-                específicas  de  cada cliente. Desde la idea inicial hasta la entrega final, Golden Panda
-                <br>
-            </p>
-            </div>
-      
-            <div class="servcios-text servcios-text-right">
-            <p><br><br>               
-                trabaja estrechamente con sus clientes para asegurarse de que el resultado final sea 
-                exactamente lo que necesitan. 
-                <br><br><br>
-                <video id="myVideo" src="image/Ovni.mp4"250px" width="100%" alt="ovni 3D" autoplay loop muted></video> 
-
-            </div>      
-        </div>    
-        <!--<a href="https://juancamilozartacam.wixsite.com/golden-panda" class="btn">Wix</a>-->
+    <!-- Seccion 2: Servicios -->
+    <section class="content servicios" id="servicios">
+        <br><h1 class="h1_servicios"><br>Servicios</h1>
+        <div>
+            <br><br>
+            <p class="p_portafolio_f">Descubre el poder de la creatividad: llevamos tu marca al siguiente nivel con soluciones integrales y cautivadoras. </p>
+        </div>
     </section>
     <!-- Seccion 3: Portafolio -->
     <section class="content portafolio" id="portafolio">
-    <h2 class="title">Portafolio</h2>
-    <div class="menu">
-        <a href="render.html"  class="menu-item">
-            <img src="image/4.png" alt="Renders">
-            <div class="text-overlay">
-                <h3>Renders</h3>
-            </div>           
-        </a>
-        <a href="ilustraciones.html"  class="menu-item">
-            <img src="image/5.png" alt="Ilustraciones">
-            <div class="text-overlay">
-                <h3>Ilustraciones</h3>
-            </div>
-        </a>
-        <a href="abstracto.html"  class="menu-item">
-            <img src="image/6.png" alt="Estilo Abstracto">
-            <div class="text-overlay">
-                <h3>Estilo Abstracto</h3>
-            </div>
-        </a>
-    </div>
-    <div class="menu">
-        <a href="https://www.youtube.com/watch?v=TYg3m0Dxqao&list=PLNAhQVPdMshkgiEGfyZBpuTmzfltyGsSO&index=13" target="_blank"  class="menu-item">
-            <img src="image/7.png" alt="Animacion 3D">
-            <div class="text-overlay">
-                <h3>Animacion 3D</h3>
-            </div>
-        </a>
-        <a href="https://www.youtube.com/watch?v=X6JTHHJeqNA&list=PLNAhQVPdMshkYGLa_LXdBy_6NUsuqwP2f&index=11" target="_blank"  class="menu-item">
-            <img src="image/8.png" alt="Animacion 2D">
-            <div class="text-overlay">
-                <h3>Animacion 2D</h3>
-            </div>
-        </a>
-        <a href="retrato.html"  class="menu-item">
-            <img src="image/9.png" alt="Retratos">
-            <div class="text-overlay">
-                <h3>Retratos</h3>
-            </div>
-        </a>
-    </div>
-    <!--<a href="HTML/galeria.html" target="_blank" class="btn">Saber precio</a>-->
+        <div class="portafolio_servicio">
+            <h2 class="h2_portafolio">Desarrollo <br>Software</h2><br>
+            <p class="p_portafolio">Desarrollamos soluciones tecnológicas adaptables y eficientes.</p><br><br>
+            <a href="../HTML/programacion.html" class="ver-mas-btn">Ver más</a>
+        </div>        
+        <div class="portafolio_servicio">
+            <h2 class="h2_portafolio">Animación <br>2D y 3D</h2><br>
+            <p class="p_portafolio">Transformamos ideas en movimientos visuales cautivadores</p><br><br>
+            <a href="../HTML/animacion.html" class="ver-mas-btn">Ver más</a>
+        </div>        
+        <div class="portafolio_servicio">
+            <h2 class="h2_portafolio">Contenido <br>Audiovisual</h2><br>
+            <p class="p_portafolio">Un contenido entretenido y agradable que cautiva al publico.</p><br><br>
+            <a href="../HTML/publicidad.html" class="ver-mas-btn">Ver más</a>
+        </div>
     </section>
-    <!--Seccion 4: Nosotros-->
-	<section class="content nosotros" id="nosotros">
-		<h2 class="title">Nosotros</h2>
-		<div class="nosotros">
-			<div class="nosotros-image">
-                <video id="myVideo" src="image/Intro.mp4" height="250px" width="100%" alt="ovni 3D" autoplay loop muted></video> 
-			</div>
-			<div class="nosotros-text">
-					<p>
-                        Nosotros nos destacamos por nuestra capacidad creativa y nuestro compromiso 
-                        en brindar a nuestros clientes soluciones personalizadas, únicas y de alta 
-                        calidad en diseño gráfico, animación y programación web. 
-                        <br><br>
-                        Nos enfocamos en brindar una amplia gama de servicios que incluyen desde 
-                        contenido audiovisual hasta la creación y diseño de páginas web básica.
-                        <br><br>
-                        Además, estamos comprometidos en satisfacer sus necesidades y deseos como 
-                        clientes, asegurándonos de que cada proyecto sea único, personalizado y de 
-                        alta calidad, prestando atención a los detalles y a sus necesidades 
-                        individuales. <br> Nos enfocamos en hacer realidad sus ideas más creativas y 
-                        en asegurarnos de que estén satisfechos con nuestro trabajo, demostrando 
-                        que para nosotros, la creatividad no tiene límites.
-                    </p>
-			</div>
-		</div>		
-	</section>	
-    <!--Seccion 5: Contacto-->
+    <!-- Seccion 4: contacto -->
     <section class="content contacto" id="contacto">
-
-        <h2 class="title">Contacto</h2> 
         <br><br>
-        <p>
+        <h1 class="h1_servicios">Contacto</h1> 
+        <br><br>
+        <p class="p_portafolio_f">
             Si desea obtener más información o ponerse en contacto con 
-            nosotros, no dude en hacerlo a través de los siguientes medios:
+            nosotros, no dude en hacerlo a través de los siguientes medios. <br><br>
         </p>       
 		<div class="box-container">
 
 			<a href="https://www.linkedin.com/in/juan-zarta-campo-800a3518a/" target="_blank" class="box">
 				<i class="fab fa-linkedin"></i>
 				<h3>Linkedin</h3>
-			</a>
-			
+			</a>			
 			<a href="https://www.facebook.com/ElPanda.Zart" target="_blank" class="box">
 				<i class="fab fa-facebook"></i>
 				<h3>Facebook</h3>
-			</a>
-			
+			</a>			
 			<a href="https://www.youtube.com/channel/UCw4rNkcmYE79flslT1aB9RA" target="_blank" class="box">
 				<i class="fab fa-youtube"></i>
 				<h3>Youtube</h3>
-			</a>
-			
-		</div>	
-        
+			</a>			
+		</div>
         <div class="box-container">
-
 			<a href="https://github.com/JUANZARTA" target="_blank" class="box">
 				<i class="fab fa-github"></i>
 				<h3>GitHub</h3>
@@ -188,46 +106,34 @@
 				<i class="fab fa-whatsapp"></i>
 				<h3>WhatsApp</h3>
 			</a>
-			
 		</div>
-
-        <div class = "agradecimiento-text">
-            <p ><br><br>
-                En Golden Panda, nos enorgullece nuestro compromiso de trabajar estrechamente 
-                con nuestros clientes para asegurarnos de que su visión se haga realidad. 
-                Nos aseguramos de que cada proyecto sea único y personalizado, con atención 
-                a los detalles y la calidad.
-                <br> <br>
-            </p>
-        </div>
-        <p>            
-            Gracias por visitar nuestra página web y esperamos poder trabajar contigo en el futuro..
-        </p>
-
     </section>
-    <!--Seccion 6: Ref-->
-    <section class="content ref">
-        <div class="ag-text">
-            <p> 
-                Juan Camilo Zarta Campo | 190001 Popayán, Cauca., Colombia
-                <br><br>
-                Email: goldenpanda.kz@gmail.com | Tel: +57- 321 7976417
-                <br><br><br><br>
-            </p>
+    <!-- Seccion 5: Fin de pagina -->
+    <section class="content agradecimiento" id="agradecimiento">
+        <div>
+            <p class="p_portafolio_f">Gracias por visitar nuestra página web y esperamos poder trabajar contigo en el futuro.</p>
         </div>
-       
-        <figure class="pandita">
-            <img src="image/panda.gif" height="200px" width="55%" alt="mapa">
-        </figure>
-        
-        <div class="Pie_pagina">
-            <p class="Pie_pagina"><br><br>
-                <a href="terminos.html"  style="color: gold; text-decoration: none;">Privacy Policy</a>
-                <br><br>
-                © 2023 Created by Juan Camilo Zarta Campo, Software Developer.
-            </p>
+    </section>
+    <!-- Seccion 6: Footer -->
+    <footer class="footer">    
+        <div class="columna">
+            <div class="logo" >
+                <img class="logo" src="Image/Logo_Color.png" alt="" height="100">
+            </div>
         </div>
-        
-    </section>    
+    </footer>
+    <!-- Seccion 7: Creditos -->
+    <div class="footer-credito" id="footer" >
+        <p class="credito"> © 2024 || Golden Panda 
+        </p>        
+    </div>
+
+    <!-- Enlace de WhatsApp -->
+    <a class="whatsapp-icon" href="https://wa.me/573217976417" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Java Script -->
+    <script src="JS/scripts.js"></script>
 </body>
 </html>

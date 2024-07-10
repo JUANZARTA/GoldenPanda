@@ -58,3 +58,47 @@ document.addEventListener("DOMContentLoaded", function () {
     // ... (otro código) ...
 });
 
+// CARRUCEL DE IMÁGENES DE SERVICIOS
+document.addEventListener('DOMContentLoaded', function () {
+    const images = document.querySelectorAll('.cuadro_img .carousel-img');
+    let counter = 0;
+
+    function showImage() {
+        images.forEach((image, index) => {
+            if (index === counter) {
+                image.classList.add('active');
+            } else {
+                image.classList.remove('active');
+            }
+        });
+
+        setTimeout(() => {
+            counter = (counter + 1) % images.length;
+            showImage();
+        }, 3000); // Cambia la imagen cada 2 segundos
+    }
+
+    showImage();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const images = document.querySelectorAll('.cuadro_img2 .carousel-img2');
+    let counter = 0;
+
+    function showImage() {
+        images.forEach((image, index) => {
+            if (index === counter) {
+                image.classList.add('active');
+            } else {
+                image.classList.remove('active');
+            }
+        });
+
+        setTimeout(() => {
+            counter = (counter + 1) % images.length;
+            showImage();
+        }, 3000); // Cambia la imagen cada 2 segundos
+    }
+
+    showImage();
+});

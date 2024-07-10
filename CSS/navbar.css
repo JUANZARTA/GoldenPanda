@@ -28,15 +28,17 @@ nav ul li{
 }
 nav ul li a{
     color: var(--color-blanco);
-    font-size: 17px;
+    font-size: 16px;
     padding: 15px 15px;
-    border-radius:  100px;
+    border-radius:  10px;
     text-transform: uppercase;
+    text-decoration: none;
 }
 li a:hover{
-    background: linear-gradient(to bottom  right, var(--color-terciario), var(--color-secundario), var(--color-terciario)) ;
-    color: var(--color-negro) ;
-    transition: 0.5s;
+    background: linear-gradient(to bottom  , var(--color-1), var(--color-4)) ;
+    color: var(--color-primario) ;
+    transition: 1s; 
+    text-decoration: none;
 }
 
 /* Barra de Navegacion para dispositivos moviles */

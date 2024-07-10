@@ -1,0 +1,148 @@
+/* Servicios */
+.servicios {
+    background: linear-gradient(to right, var(--color-1), var(--color-2));   
+    height: 320px;
+}
+.info{
+    background: var(--color-blanco);   
+    height: 260px;
+}
+
+/*Cuadro de cotizacion*/
+.servicios_cotizar{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around;
+    align-items: center;
+    padding: 3%;
+    padding-right: 12%;
+    padding-left: 12%;
+    background: linear-gradient(to right, var(--color-1),var(--color-2) );
+}
+.cuadro_cotizar{
+    background: var(--color-5);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 50px;
+    border-radius: 20px;
+    width: 300px;
+    height: 250px;
+    position: relative; 
+}
+.cuadro_img {
+    position: relative;
+    text-align: center;
+    padding: 50px;
+    border-radius: 30px;
+    width: 320px;
+    height: 230px;
+    overflow: hidden;
+}
+.cuadro_img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+}
+.cuadro_img img.active {
+    opacity: 1;
+}
+
+.cuadro_img2 {
+    position: relative;
+    text-align: center;
+    padding: 50px;
+    border-radius: 30px;
+    width: 320px;
+    height: 230px;
+    overflow: hidden;
+}
+.cuadro_img2 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+}
+.cuadro_img2 img.active {
+    opacity: 1;
+}
+
+.info_video{
+    position: relative;
+    text-align: center;
+    border-radius: 10px;
+    width: 500px;
+    height: 300px;
+    margin-right: 100px;
+}
+.btn-about{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 8vh;
+    margin-left: 50px;
+}
+
+/*Boton Cotizacion*/
+.btn-cotizacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+}
+.btn-cotizacion a {
+    margin: 0 0px;
+    font-size: 18px;
+}
+
+/*Responsive para Tablet**/
+@media (max-width: 952px){
+    .portaservicios_cotizarfolio{        
+        height: 120vh;
+    }
+    .cuadro_cotizar{
+        width: 230px;
+        height: 290px;
+    }
+    .cuadro_img{
+        width: 230px;
+        height: 290px;
+    }
+    .cuadro_img2{
+        width: 230px;
+        height: 290px;
+    }
+}
+/*Responsive para Celulares**/
+@media (max-width: 750px){
+    .servicios_cotizar{
+        margin-top: 180px;
+        margin-bottom: 20px;
+        flex-direction: column; 
+        height: 100px;
+        height: 3dvh;        
+    }
+    .cuadro_cotizar {
+        margin-bottom: 20px;  
+        width: 300px;
+        height: 230px;
+    }
+    .cuadro_img {
+        margin-bottom: 20px;  
+        width: 300px;
+        height: 230px;
+    }
+    .cuadro_img2 {
+        margin-bottom: 20px;  
+        width: 300px;
+        height: 230px;
+    }
+}

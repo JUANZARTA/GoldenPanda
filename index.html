@@ -4,117 +4,191 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=devide-width, initial-scale=1.0">
-    <title>Golden Panda</title>
+    <title>Pagina Web</title>
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/navbar.css">
     <link rel="stylesheet" href="CSS/inicio.css">
+    <link rel="stylesheet" href="CSS/servicios.css">
     <link rel="stylesheet" href="CSS/portafolio.css">
     <link rel="stylesheet" href="CSS/contacto.css">
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <!--Barra de Navegacion-->
+    
+    <!-- Seccion 1: Inicio -->
+    <header class="content inicio" id="inicio">
+        <div class="background-carousel">
+            <img src="Image/inicio/Imagen 1.jpg" alt="Imagen 1" class="carousel">
+            <img src="Image/inicio/Imagen 2.jpg" alt="Imagen 2" class="carousel">
+            <img src="Image/inicio/Imagen 3.jpg" alt="Imagen 3" class="carousel">            
+            <img src="Image/inicio/Imagen 4.jpg" alt="Imagen 3" class="carousel">            
+            <img src="Image/inicio/Imagen 5.jpg" alt="Imagen 3" class="carousel">          
+            <img src="Image/inicio/Imagen 6.jpg" alt="Imagen 3" class="carousel">
+        </div>
+        <h2 class="marca">GOLDEN PANDA</h2>
+        <p class="slogan">Tu imaginación no tiene limites.</p>
+        <div class="btn-home">
+            <a href="html/nosotros.html" class="btn">Sobre Nosotros</a>
+        </div>
+    </header>
+    <!-- Sección 2: Servicios -->
+    <section class="content servicios" id="servicios"><!--Barra de Navegacion-->
     <nav>
             <input type="checkbox" id="check">
             <label for="check" class="checkbtn">
                 <i class="fas fa-bars"></i>            
             </label>
-            <a href="#inicio" class="enlace">
+            <a href="index.html" class="enlace">
                 <img src="Image/Icono.png" alt="" class="icono_panda">
             </a>
             <ul>
-                <li><a class="active" href="#inicio">Inicio</a></li>
-                <li><a class="active" href="#portafolio">Servicios</a></li>
-                <li><a class="active" href="#contacto">Contactos</a></li>      
-                <li><a class="active" href="HTML/nosotro">Nosotros</a></li> 
+                <li><a class="active" href="index.html">Inicio</a></li>                
+                <li><a class="active" href="html/nosotros.html">Nosotros</a></li> 
+                <li><a class="active" href="#">Cotizar</a></li>                
+                <li><a class="active" href="#">Contacto</a></li>      
             </ul>
     </nav>
-    <!-- Seccion 1: Inicio -->
-    <header class="content inicio" id="inicio">
-        <div class="background-carousel">
-            <img src="../GoldenPanda/Image/Inicio/Imagen1.jpg" alt="Imagen 1" class="carousel">
-            <img src="../GoldenPanda/Image/Inicio/Imagen2.jpg" alt="Imagen 2" class="carousel">
-            <img src="../GoldenPanda/Image/Inicio/Imagen3.jpg" alt="Imagen 3" class="carousel">            
-            <img src="../GoldenPanda//Image/Inicio/Imagen4.jpg" alt="Imagen 3" class="carousel">            
-            <img src="../GoldenPanda/Image/Inicio/Imagen5.jpg" alt="Imagen 3" class="carousel">          
-            <img src="../GoldenPanda/Image/Inicio/Imagen6.jpg" alt="Imagen 3" class="carousel">
-        </div>
-        <h2 class="marca">GOLDEN PANDA</h2>
-        <p class="slogan">Tu imaginación no tiene limites.</p>
-        <div class="btn-home">
-            <a href="HTML/nosotro.html" class="btn">mas Info</a>
-        </div>
-    </header>
-    <!-- Seccion 2: Servicios -->
-    <section class="content servicios" id="servicios">
-        <br><h1 class="h1_servicios"><br>Servicios</h1>
+        <br><h1 class="titulo_1"><br>Servicios</h1>
         <div>
             <br><br>
-            <p class="p_portafolio_f">Descubre el poder de la creatividad: llevamos tu marca al siguiente nivel con soluciones integrales y cautivadoras. </p>
+            <p class="parrafo_1">Ofrecemos soluciones innovadoras para potenciar tu marca y destacar en el mercado. 
+                <br>Descubre cómo nuestros servicios pueden transformar tu presencia empresarial. ¡Checa los servicios que brindamos!</p><br>
+            <div class="lista_1">
+                <ul>       
+                    <li>Videos Publicitarios</li>  
+                    <li>Edición de Fotografías</li>                                         
+                    <li>Desarrollo de Software</li>    
+                    <li>Desarrollo de Páginas Web</li>  
+                </ul>
+                <ul>     
+                    <li>Modelado 3D</li> 
+                    <li>Animación 2D</li>  
+                    <li>Diseño de Personajes</li>
+                </ul>
+                <ul>
+                    <li>Diseños Graficos</li>  
+                    <li>Diseño de Marcas</li>         
+                    <li>Tarjetas de presentación</li>   
+                </ul>
+            </div>
         </div>
     </section>
-    <!-- Seccion 3: Portafolio -->
-    <section class="content portafolio" id="portafolio">
+    <!-- Seccion 3: Cuadro Cotizacion -->
+    <section class="content servicios_cotizar" id="servicios_cotizar"">
+        <div class="cuadro_img">
+            <img src="image/servicios/1.png" alt="Imagen 1" class="carousel-img">
+            <img src="image/servicios/2.png" alt="Imagen 1" class="carousel-img">
+            <img src="image/servicios/3.png" alt="Imagen 1" class="carousel-img">            
+        </div> 
+        <div class="cuadro_cotizar">
+            <p class="parrafo_2">Potencia tu marca con nuestras soluciones innovadoras. ¡Cotiza ahora y descubre cómo podemos ayudarte!</p>
+            <a href="html/cotizar.html" class="btn">Cotizar</a>
+        </div>  
+        <div class="cuadro_img2">
+            <img src="image/servicios/6.png" alt="Imagen 1" class="carousel-img2">
+            <img src="image/servicios/4.png" alt="Imagen 1" class="carousel-img2">            
+            <img src="image/servicios/5.png" alt="Imagen 1" class="carousel-img2">
+        </div> 
+        <!--
         <div class="portafolio_servicio">
             <h2 class="h2_portafolio">Desarrollo <br>Software</h2><br>
             <p class="p_portafolio">Desarrollamos soluciones tecnológicas adaptables y eficientes.</p><br><br>
-            <a href="HTML/programacion" class="ver-mas-btn">Ver más</a>
+            <a href="../HTML/programacion.html" class="ver-mas-btn">Ver más</a>
         </div>        
         <div class="portafolio_servicio">
             <h2 class="h2_portafolio">Animación <br>2D y 3D</h2><br>
             <p class="p_portafolio">Transformamos ideas en movimientos visuales cautivadores</p><br><br>
-            <a href="HTML/animacion" class="ver-mas-btn">Ver más</a>
+            <a href="../HTML/animacion.html" class="ver-mas-btn">Ver más</a>
         </div>        
         <div class="portafolio_servicio">
             <h2 class="h2_portafolio">Contenido <br>Audiovisual</h2><br>
             <p class="p_portafolio">Un contenido entretenido y agradable que cautiva al publico.</p><br><br>
-            <a href="HTML/publicidad" class="ver-mas-btn">Ver más</a>
+            <a href="../HTML/publicidad.html" class="ver-mas-btn">Ver más</a>
+        </div>
+        -->
+    </section>    
+    <!-- Sección 4: Info extra -->
+    <section class="content info" id="info">
+        <div>                     
+            <div class="lista_2">
+                <ul>       
+                    <p class="parrafo_4">En Golden Panda, transformamos tus ideas en realidades visuales excepcionales. Especializados en animación 2D y 3D, ilustración, diseño gráfico y web, edición de fotos y videos, y la creación de páginas web, ofrecemos una gama completa de servicios creativos.
+                    <br><br>
+                    Cada proyecto es una oportunidad para innovar y sorprender, capturando la esencia de tu marca con precisión y creatividad. Confía en nosotros para darle vida a tu visión con animaciones vibrantes, diseños atractivos y soluciones digitales de alta calidad. En Golden Panda, tu éxito es nuestra misión, y estamos comprometidos a entregarte resultados que superen todas tus expectativas.
+                    </p>
+                    <div class="btn-about">
+                        <a href="html/nosotros.html" class="btn">Conocer más</a>
+                    </div>
+                </ul>
+                <ul>     
+                    <video controls autoplay loop class="info_video" style="width: 100%; height: auto;" alt="info_video">
+                        <source src="video/video_1.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </ul>
+            </div>
+        </div>   
+    </section>
+    <!-- Seccion 5: Proyectos -->
+    <section class="content portafolio" id="portafolio">
+        <h1 class="titulo_1"><br>Proyectos</h1><br>
+        <p class="parrafo_1">Descubre ahora nuestros trabajos destacados</p>
+        <div class="portafolio_c">
+            <div class="cuadro_portafolio">
+                <h2 class="titulo_2">Desarrollo Software</h2> <br><br>
+                <p class="parrafo_2">Desarrollamos soluciones tecnológicas adaptables y eficientes.</p> <br>
+                <a href="html/programacion.html" class="btn">Ver más</a>
+            </div>  
+            <div class="cuadro_portafolio">
+                <h2 class="titulo_2">Animacion 2D & 3D</h2> <br><br>
+                <p class="parrafo_2">Desarrollamos soluciones tecnológicas adaptables y eficientes.</p> <br>
+                <a href="html/animacion.html" class="btn">Ver más</a>
+            </div>  
+            <div class="cuadro_portafolio">
+                <h2 class="titulo_2">Artes Visuales</h2> <br><br>
+                <p class="parrafo_2">Un contenido entretenido y agradable que cautiva al publico.</p> <br>
+                <a href="html/publicidad.html" class="btn">Ver más</a>
+            </div>  
         </div>
     </section>
-    <!-- Seccion 4: contacto -->
+    <!-- Seccion 6: contacto -->
     <section class="content contacto" id="contacto">
         <br><br>
-        <h1 class="h1_servicios">Contacto</h1> 
+        <h1 class="titulo_1">Contacto</h1> 
         <br><br>
-        <p class="p_portafolio_f">
+        <p class="parrafo_1">
             Si desea obtener más información o ponerse en contacto con 
             nosotros, no dude en hacerlo a través de los siguientes medios. <br><br>
         </p>       
 		<div class="box-container">
-
-			<a href="https://www.instagram.com/golden_panda_6/" target="_blank" class="box">
-				<i class="fab fa-instagram"></i>
-				<h3>Instagram</h3>
-			</a>			
-			<a href="https://www.facebook.com/profile.php?id=61557062733690" target="_blank" class="box">
+            <a href="https://wa.me/573217976417" target="_blank" class="box">
+				<i class="fab fa-whatsapp"></i>
+				<h4>WhatsApp</h3>
+			</a>		
+			<a href="https://www.facebook.com/ElPanda.Zart" target="_blank" class="box">
 				<i class="fab fa-facebook"></i>
-				<h3>Facebook</h3>
-			</a>			
-			<a href="https://www.youtube.com/channel/UCw4rNkcmYE79flslT1aB9RA" target="_blank" class="box">
-				<i class="fab fa-youtube"></i>
-				<h3>Youtube</h3>
-			</a>			
-		</div>
-        <div class="box-container">
+				<h4>Facebook</h3>
+			</a>	
+            <a href="https://www.instagram.com/golden_panda_6/" target="_blank" class="box">
+				<i class="fab fa-instagram"></i>
+				<h4>Instagram</h3>
+			</a>				
 			<a href="https://www.tiktok.com/@goldenpanda_6" target="_blank" class="box">
 				<i class="fab fa-tiktok"></i>
-				<h3>TikTok</h3>
-			</a>
-			
-			<a href="https://wa.me/573217976417" target="_blank" class="box">
-				<i class="fab fa-whatsapp"></i>
-				<h3>WhatsApp</h3>
-			</a>
+				<h4>Tik Tok</h3>
+			</a>		
+			<a href="https://github.com/JUANZARTA" target="_blank" class="box">
+				<i class="fab fa-github"></i>
+				<h4>GitHub</h3>
+			</a>					
+			<a href="https://www.youtube.com/channel/UCw4rNkcmYE79flslT1aB9RA" target="_blank" class="box">
+				<i class="fab fa-youtube"></i>
+				<h4>Youtube</h3>
+			</a>	
 		</div>
     </section>
-    <!-- Seccion 5: Fin de pagina -->
-    <section class="content agradecimiento" id="agradecimiento">
-        <div>
-            <p class="p_portafolio_f">Gracias por visitar nuestra página web y esperamos poder trabajar contigo en el futuro.</p>
-        </div>
-    </section>
-    <!-- Seccion 6: Footer -->
+    <!-- Seccion 7: Footer -->
     <footer class="footer">    
         <div class="columna">
             <div class="logo" >
@@ -122,7 +196,7 @@
             </div>
         </div>
     </footer>
-    <!-- Seccion 7: Creditos -->
+    <!-- Seccion 8: Creditos -->
     <div class="footer-credito" id="footer" >
         <p class="credito"> © 2024 || Golden Panda 
         </p>        

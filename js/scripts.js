@@ -116,4 +116,10 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault(); // Previene el comportamiento por defecto del enlace
         document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
     });
+
+    // Manejador para el enlace "Nosotros"
+    document.querySelector('a[href="#nosotros"]').addEventListener('click', function(event) {
+        event.preventDefault(); // Previene el comportamiento por defecto del enlace
+        document.getElementById('nosotros').scrollIntoView({ behavior: 'smooth' });
+    });
 });

@@ -1,0 +1,56 @@
+
+/* Contacto */
+.contacto {
+    background: linear-gradient(to right, var(--color-1), var(--color-2));
+}
+.box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.box-container .box {
+    height: 7rem;
+    width: 8rem;
+    text-align: center;
+    border-radius: 1rem;
+    /*background: var(--color-2);*/
+    margin: 1rem;    
+}
+.box-container .box i {
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    border-radius: 50%;
+    color: var(--color-primario);
+    background: none;
+    font-size: 2rem;
+    margin: 1rem 0;
+
+}
+.box-container .box i:hover {
+    color: var(--color-secundario2);
+    background:transparent;
+}
+.box-container .box h3:hover {
+    color: var(--color-secundario) ;
+}
+
+/* Agradecimiento */
+.agradecimiento{
+    background: linear-gradient(to right, var(--color-1), var(--color-2));   
+    height: 50px;
+}
+
+/*Responsive para Celulares**/
+@media (max-width: 750px){
+    .box-container .box {
+        height: 6rem;
+        width: 6rem;   
+    }
+    h3 {        
+        font-size: 12px;
+        margin-top: -10px;
+    }
+}

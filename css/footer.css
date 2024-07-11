@@ -1,0 +1,117 @@
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(to top left, var(--color-4),var(--color-3) ), url('../Image/Inicio/Imagen\ footer.png');
+    height: 250px;
+    padding: 20px;
+    flex-wrap: wrap; /* Añadido para permitir el ajuste de las columnas en filas */
+}
+.logo{
+    margin-top: 5px;
+    height: 200px;
+}
+.footer-icons i {
+    size: 60%;
+    color: var(--color-primario);
+}
+.footer-icons {
+    color: var(--color-blanco);
+}
+.footer-credito{
+    background: linear-gradient(to top, var(--color-3), var(--color-2));
+    height: 25px;
+}
+.credito{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-primario);
+    font-size: 90%;
+}
+
+/* Icono de WhatsApp */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 80px; 
+    right: 60px; 
+    width: 60px; 
+    height: 60px; 
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 12px;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 34px;
+    z-index: 10;
+}
+.whatsapp-icon:hover {
+    background: var(--color-secundario2);
+    color: var(--color-blanco); 
+}
+.contacto-icon {
+    position: fixed;
+    bottom: 80px; 
+    right: 60px; 
+    width: 60px; 
+    height: 60px; 
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 6px;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 34px;
+    z-index: 10;
+}
+.contacto-icon:hover {
+    background: var(--color-secundario2);
+    color: var(--color-blanco); 
+}
+
+/* Ajustes para el diseño responsive en tablets */
+@media (max-width: 952px ) and (min-width: 952px) {
+    .logo {
+        margin-top: 75px;
+    }
+    .portafolio{
+        height: 60vh;
+    }
+    .footer{    
+        height: 300px;    
+    }
+}
+
+/* Ajustes para el diseño responsive en celulares */
+@media (max-width: 750px) {
+    footer {
+        justify-content: center; 
+        height: 300px;        
+    }
+    .logo {
+        margin-top: 5px;
+    }
+    .p_footer{
+        text-align: justify;
+    }
+    .columna {
+        flex: none; 
+        width: 100%;
+        margin-right: 0;
+    }      
+    .portafolio{
+        height: 120vh;
+    }  
+    .icono{
+        margin-top: -200px;
+    }
+    .whatsapp-icon {
+        right: 30px; /* Ajusta según sea necesario */
+    }
+    .titulo{
+        margin-bottom: -10px;
+    }
+    .credito{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+

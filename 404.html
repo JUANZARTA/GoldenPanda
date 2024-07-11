@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redireccionando...</title>
+    <script>
+        // Redirección de URLs limpias a las rutas correctas
+        document.addEventListener('DOMContentLoaded', function() {
+            const path = window.location.pathname.split('/').filter(Boolean);
+            if (path.length === 1 && ['nosotros', 'cotizar', 'programacion', 'animacion', 'publicidad'].includes(path[0])) {
+                window.location.replace(`/GoldenPanda/html/${path[0]}`);
+            } else {
+                // Si no coincide con ninguna ruta conocida, redirige a la página de inicio
+                window.location.replace('/GoldenPanda/');
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>Redireccionando...</h1>
+</body>
+</html>

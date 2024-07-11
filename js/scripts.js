@@ -102,3 +102,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     showImage();
 });
+
+//Rutas Href
+document.addEventListener('DOMContentLoaded', function() {
+    // Manejador para el enlace "Inicio"
+    document.getElementById('inicio-link').addEventListener('click', function(event) {
+        event.preventDefault(); // Previene el comportamiento por defecto del enlace
+        document.getElementById('inicio').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Manejador para el enlace "Contacto"
+    document.getElementById('contacto-link').addEventListener('click', function(event) {
+        event.preventDefault(); // Previene el comportamiento por defecto del enlace
+        document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+    });
+});

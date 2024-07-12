@@ -1,7 +1,7 @@
 .footer {
     display: flex;
     justify-content: space-around;
-    background: linear-gradient(to top left, var(--color-4),var(--color-3) ), url('../Image/Inicio/Imagen\ footer.png');
+    background: linear-gradient(to top left, var(--color-4),var(--color-3) ), url('../Image/inicio/Imagen\ footer.png');
     height: 250px;
     padding: 20px;
     flex-wrap: wrap; /* Añadido para permitir el ajuste de las columnas en filas */

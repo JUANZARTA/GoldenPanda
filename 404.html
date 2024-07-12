@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redireccionando...</title>
     <script>
-        // Redirección de URLs limpias a las rutas correctas
+        // Redireccionar a la página correcta removiendo "html/"
         document.addEventListener('DOMContentLoaded', function() {
-            const path = window.location.pathname.split('/').filter(Boolean);
-            if (path.length === 1 && ['nosotros', 'cotizar', 'programacion', 'animacion', 'publicidad'].includes(path[0])) {
-                window.location.replace(`/GoldenPanda/html/${path[0]}`);
+            const path = window.location.pathname;
+            if (path.startsWith('/GoldenPanda/nosotros')) {
+                window.location.replace('/GoldenPanda/html/nosotros');
+            } else if (path.startsWith('/GoldenPanda/cotizar')) {
+                window.location.replace('/GoldenPanda/html/cotizar');
+            } else if (path.startsWith('/GoldenPanda/programacion')) {
+                window.location.replace('/GoldenPanda/html/programacion');
+            } else if (path.startsWith('/GoldenPanda/animacion')) {
+                window.location.replace('/GoldenPanda/html/animacion');
+            } else if (path.startsWith('/GoldenPanda/publicidad')) {
+                window.location.replace('/GoldenPanda/html/publicidad');
             } else {
-                // Si no coincide con ninguna ruta conocida, redirige a la página de inicio
-                window.location.replace('/GoldenPanda/');
+                window.location.replace('/GoldenPanda/html/404.html'); // Redirigir a una página 404 interna
             }
         });
     </script>

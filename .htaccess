@@ -6,3 +6,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ $1.html
 
 #RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/GoldenPanda/html/
+RewriteRule ^(nosotros|cotizar|programacion|animacion|publicidad)$ /GoldenPanda/html/$1 [L]

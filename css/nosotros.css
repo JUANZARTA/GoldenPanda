@@ -1,11 +1,14 @@
 /* Clients */
 
-.cards{
+/* Contenedor de tarjetas */
+.cards {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 20px; /* Espaciado vertical entre filas de tarjetas */
 }
-.cards .card{
+
+/* Estilos de cada tarjeta */
+.cards .card {
     background: var(--color-5);
     display: flex;
     width: 35%;
@@ -14,10 +17,11 @@
     justify-content: space-evenly;
     border-radius: 5px;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
-    margin-right: -160px; /* Ajustar el espaciado horizontal */
-    margin-left: -160px; /* Ajustar el espaciado horizontal */
+    margin: 0 -160px; /* Ajustar el espaciado horizontal */
 }
-.cards .card img{
+
+/* Imagen dentro de la tarjeta */
+.cards .card img {
     width: 100px;
     height: 100px;
     object-fit: cover;
@@ -25,11 +29,15 @@
     border-radius: 50%;
     display: block;
 }
-.cards .card > .card-equipo{
+
+/* Contenido de equipo dentro de la tarjeta */
+.cards .card > .card-equipo {
     width: 60%;
-    color: #fff;
+    color: var(--color-blanco);
 }
-.cards .card > .card-equipo p{
+
+/* Estilos para los párrafos dentro de .card-equipo */
+.cards .card > .card-equipo p {
     font-weight: 300;
     padding-top: 5px;
 }

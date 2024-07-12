@@ -5,235 +5,199 @@
     --color-secundario2: #ffda62;
     --color-terciario: #cc7400;
     --color-galeria: #fffffff5;
-    --color-negro:#000000;
-    --color-blanco:#fff; 
-    --color-gris:#ebedffe5;
-    --color-1:#131313;
-    --color-2:#0f1114;
-    --color-3:#20202270;    
-    --color-4:#272c31;   
-    --color-5:#1c2024e5;    
-}  
-*{
+    --color-negro: #000000;
+    --color-blanco: #fff; 
+    --color-gris: #ebedffe5;
+    --color-1: #131313;
+    --color-2: #0f1114;
+    --color-3: #20202270;    
+    --color-4: #272c31;   
+    --color-5: #1c2024e5;    
+}
+
+/* Reseteo Global */
+* {
     padding: 0;
     margin: 0;
-    text-decoration: none;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
 }
+
 body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background: linear-gradient(to right, var(--color-1),var(--color-2) );
+    background: linear-gradient(to right, var(--color-1), var(--color-2));
 }
 
-/* Texto Generales*/
+/* Texto Generales */
 h1, p, a {
-    color: var(--color-blanco);    
+    color: var(--color-blanco);
     font-family: 'Roboto', sans-serif;
-    text-decoration: none;
 }
+
 a.parrafo4:visited {
-    color: var(--color-blanco);  /* Color blanco para los enlaces visitados */
+    color: var(--color-blanco);
 }
 
 /* Textos */
-.titulo_1 {
+.titulo_1, .titulo_2, .titulo_3, .titulo_4 {
     text-align: center;
     font-family: 'Roboto', sans-serif;
+}
+
+.titulo_1 {
     color: var(--color-primario);
     margin-bottom: -20px;
-    font-size: 200%;
+    font-size: 2rem;
 }
+
 .titulo_2 {
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
     color: var(--color-blanco);
     margin-bottom: -20px;
-    font-size: 150%;
+    font-size: 1.5rem;
 }
+
 .titulo_3 {
     text-align: left;
-    font-family: 'Roboto', sans-serif;
     color: var(--color-blanco);
     margin-bottom: -20px;
-    font-size: 100%;
+    font-size: 1rem;
 }
+
 .titulo_4 {
     text-align: left;
-    font-family: 'Roboto', sans-serif;
     color: var(--color-primario);
     margin-left: 10px;
-    font-size: 160%;
+    font-size: 1.6rem;
     font-weight: bold;
 }
-.parrafo_1{
+
+.parrafo_1 {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    margin-top: 10px;
-    margin-left:0px;
-    margin-right: 0px;
-    text-transform: none;
-    font-size: 100%;
+    margin: 10px 0;
+    font-size: 1rem;
 }
-.parrafo_2{
+
+.parrafo_2 {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     margin-top: 10px;
-    font-size: 90%;
+    font-size: 0.9rem;
 }
-.parrafo_3 {
+
+.parrafo_3, .parrafo_4, .parrafo_5 {
     text-align: justify;
     font-family: 'Roboto', sans-serif;
-    margin-top: 10px;
-    margin-left:100px;
-    margin-right: 100px;
-    font-size: 90%;
+    margin: 10px 100px;
+    font-size: 0.9rem;
 }
+
 .parrafo_4 {
-    text-align: justify;
     color: var(--color-negro);
-    font-family: 'Roboto', sans-serif;
-    margin-top: 5px;
-    margin-left:50px;
-    font-size: 90%;
+    margin: 5px 50px;
 }
+
 .parrafo_5 {
-    text-align: justify;
     color: var(--color-blanco);
-    font-family: 'Roboto', sans-serif;
-    margin-top: 25px;
-    margin-left:10px;
-    font-size: 90%;
+    margin: 25px 10px;
 }
 
 /* Listas */
-.lista_1{
+.lista_1, .lista_2, .lista_3 {
+    padding: 20px 0;
+}
+
+.lista_1 {
     display: flex;
     justify-content: center;
-    gap: 80px; /* Espacio entre las dos columnas */
-    padding: 20px 0;
+    gap: 80px;
     color: var(--color-gris);
 }
-.lista_1 ul { 
+
+.lista_1 ul, .lista_3 ul {
     padding: 0;
     margin: 0;
 }
-.lista_1 li {
-    padding: 5px 0; /* Espacio entre elementos de la lista */
+
+.lista_1 li, .lista_3 li {
+    padding: 5px 0;
     text-align: left;
 }
-.lista_2{
+
+.lista_2 {
     display: flex;
     justify-content: center;
     gap: 50px;
-    padding: 20px 50px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin: 0 50px;
     color: var(--color-negro);
 }
+
 .lista_3 {
     display: flex;
     justify-content: space-evenly;
-    padding: 20px 0;
     gap: 75px;
     margin: 0 auto;
     width: 80%; 
     color: var(--color-blanco);
     list-style: none; 
 }
-.lista_3 ul { 
-    padding: 0;
-    margin: 0;
-    list-style: none; 
-    flex: 1; 
-}
-.lista_3 li {
-    padding: 5px; 
-    text-align: center; 
-    width: 100%; 
-}
 
-
-
-/* CSS - Nosotros*/
-.sobre-nosotros-image {
-    max-width: 40%;
-    height: auto;
+/* CSS - Nosotros */
+.sobre-nosotros-image, .center-video {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-/* CSS para centrar el video horizontalmente */
-.center-video {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 40%;
+    margin: 0 auto;
     height: auto;
+    max-width: 40%;
+}
+
+@media (max-width: 952px) {
+    .p_servicios {
+        margin: 0 70px;
+    }
+}
+
+@media (max-width: 750px) {
+    .h1_servicios {
+        margin: 0 50px;
+    }
+
+    .p_servicios {
+        margin: 0 40px;
+        margin-bottom: -150px;
+    }
+
+    .p_portafolio_f {
+        margin: 0 40px;
+    }
+
+    .p_nosotros {
+        text-align: justify;
+        font-family: 'arial', sans-serif;
+        margin: 45px;
+        font-size: 1rem;
+    }
+
+    .center-video, .sobre-nosotros-image {
+        max-width: 80%;
+    }
 }
 
 /* Barra Lateral */
 ::-webkit-scrollbar {
     width: 15px; 
 }
+
 ::-webkit-scrollbar-thumb {
-    background-color: var(--color-terciario); 
+    background-color: var(--color-terciario);
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(--color-primario);
 }
+
 ::-webkit-scrollbar-track {
     background-color: var(--color-negro);
-}
-
-/*Responsive para Tablet**/
-@media (max-width: 952px){
-    .p_servicios{
-        margin-left: 70px;
-        margin-right: 70px;
-    }
-}
-/*Responsive para Celulares**/
-@media (max-width: 750px){
-    .h1_servicios {
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-    .p_servicios{
-        margin-left: 40px;
-        margin-right: 40px;
-    }
-    .p_servicios{
-        margin-bottom: -150px;
-    }
-    .p_portafolio_f {
-        margin-right:40px;
-        margin-left:40px;
-    }
-    /* CSS - Nosotros*/    
-    .p_nosotros {
-        text-align: justify;
-        font-family: 'arial', sans-serif;
-        margin-top: 10px;
-        margin: 45px;
-        margin-right: 45px;
-        text-transform: none;
-        font-size: 100%;
-    }
-    .center-video {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 80%;
-        height: auto;
-    }
-    .sobre-nosotros-image {
-        max-width: 80%;
-        height: auto;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-}
 }

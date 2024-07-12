@@ -1,22 +1,26 @@
-
 /* Contacto */
 .contacto {
     background: linear-gradient(to right, var(--color-1), var(--color-2));
 }
+
+/* Contenedor de cajas */
 .box-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
 }
+
+/* Caja individual */
 .box-container .box {
     height: 7rem;
     width: 8rem;
     text-align: center;
     border-radius: 1rem;
-    /*background: var(--color-2);*/
     margin: 1rem;    
 }
+
+/* Iconos dentro de las cajas */
 .box-container .box i {
     height: 3rem;
     width: 3rem;
@@ -27,29 +31,33 @@
     background: none;
     font-size: 2rem;
     margin: 1rem 0;
-
 }
+
 .box-container .box i:hover {
     color: var(--color-secundario2);
-    background:transparent;
 }
+
+/* Texto dentro de las cajas */
 .box-container .box h3:hover {
-    color: var(--color-secundario) ;
+    color: var(--color-secundario);
 }
 
 /* Agradecimiento */
-.agradecimiento{
-    background: linear-gradient(to right, var(--color-1), var(--color-2));   
+.agradecimiento {
+    background: linear-gradient(to right, var(--color-1), var(--color-2));
     height: 50px;
 }
 
-/*Responsive para Celulares**/
-@media (max-width: 750px){
+/* Ajustes para el diseño responsive en celulares */
+@media (max-width: 750px) {
+    /* Cajas en dispositivos móviles */
     .box-container .box {
         height: 6rem;
         width: 6rem;   
     }
-    h3 {        
+
+    /* Estilo de h3 en dispositivos móviles */
+    h3 {
         font-size: 12px;
         margin-top: -10px;
     }

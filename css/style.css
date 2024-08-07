@@ -163,7 +163,11 @@ a.parrafo4:visited {
     .h1_servicios {
         margin: 0 50px;
     }
-
+    .parrafo_1{
+        margin-left: 30px;
+        margin-right: 30px;
+        text-align: justify;
+    }
     .p_servicios {
         margin: 0 40px;
         margin-bottom: -150px;

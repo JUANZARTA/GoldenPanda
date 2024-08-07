@@ -84,15 +84,32 @@
     }
 }
 @media (max-width: 750px) {
+    .servicios {
+        background: linear-gradient(to right, var(--color-1), var(--color-2));   
+        height: 420px;
+    }
     .servicios_cotizar {
         margin-top: 180px;
         margin-bottom: 20px;
         flex-direction: column; 
-        height: 3dvh;        
+        height: 550px;        
     }
-    .cuadro_cotizar, .cuadro_img, .cuadro_img2 {
+    .cuadro_cotizar {
         margin-bottom: 20px;  
-        width: 300px;
-        height: 230px;
+        width: 250px;
+        height: 250px;
+    }
+    .cuadro_img, .cuadro_img2 {
+        margin-bottom: 20px;  
+        width: 220px;
+        height: 250px;
+    }
+    .lista_1 {
+        display: block; /* Coloca las listas una sobre otra */
+    }    
+    .lista_1 ul {
+        margin: 0; /* Remueve el margen lateral para aprovechar más espacio */
+        padding-left: 60px; /* Reduce el padding izquierdo */
+        text-align: left; /* Asegura que el texto esté alineado a la izquierda */
     }
 }

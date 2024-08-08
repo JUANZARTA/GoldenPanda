@@ -73,4 +73,14 @@
 
 /*Responsive para Celulares**/
 @media (max-width: 750px) {
+    .portafolio_c {
+        flex-direction: column; /* Hace que los hijos de .portafolio_c se apilen verticalmente */
+        align-items: center; /* Centra los cuadros en el contenedor para una mejor presentación */
+        gap: 10px; /* Reduce o ajusta el espacio entre los cuadros si es necesario */
+    }
+
+    .cuadro_portafolio {
+        width: 90%; /* Ajusta el ancho de cada cuadro para un mejor ajuste en la pantalla */
+        margin-bottom: 20px; /* Agrega espacio entre los cuadros para una mejor separación */
+    }
 }

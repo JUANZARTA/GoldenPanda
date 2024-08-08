@@ -88,6 +88,10 @@
         background: linear-gradient(to right, var(--color-1), var(--color-2));   
         height: 420px;
     }
+    .info {
+        background: var(--color-blanco);   
+        height: 600px;
+    }
     .servicios_cotizar {
         margin-top: 180px;
         margin-bottom: 20px;
@@ -111,5 +115,20 @@
         margin: 0; /* Remueve el margen lateral para aprovechar más espacio */
         padding-left: 60px; /* Reduce el padding izquierdo */
         text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+    }
+    /** Info Extra*/
+    .lista_2 {
+        display: block; /* Cambia la disposición de flex a block para apilar los elementos verticalmente */
+    }
+
+    .info_video {
+        width: 100%; /* Asegura que el video se ajuste al ancho del contenedor */
+        margin-top: 20px; /* Agrega un espacio entre el texto y el video */
+    }
+
+    .btn-about {
+        margin-left: 0px;
+        margin-top: 20px; /* Asegura espacio entre el texto y el botón */
+        justify-content: center; /* Centra el botón en dispositivos móviles */
     }
 }

@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 20px; /* Espaciado vertical entre filas de tarjetas */
+    flex-wrap: wrap;
 }
 
 /* Estilos de cada tarjeta */
@@ -13,8 +14,9 @@
     display: flex;
     width: 35%;
     height: 180px;
+    margin: 0 20px;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     border-radius: 5px;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
     margin: 0 -160px; /* Ajustar el espaciado horizontal */
@@ -41,3 +43,37 @@
     font-weight: 300;
     padding-top: 5px;
 }
+
+@media (max-width: 750px) {
+    .cards {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .card {
+        width: 100% !important;
+        margin: 10px 0 !important;
+        height: auto !important;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-left: 20px;
+    }
+
+    .card-equipo {
+        padding: 10px;
+        display: flex;
+        margin-right: 10px;
+        align-items: center;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+}
+

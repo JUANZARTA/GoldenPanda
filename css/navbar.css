@@ -80,7 +80,14 @@ li a:hover {
 /*Responsive para Celulares**/
 @media (max-width: 750px) {
     .icono_panda {
-        margin-left: -15px;
+        position: absolute; /* Asegura que el icono está posicionado de forma absoluta respecto a su contenedor más cercano posicionado */
+        left: 50%; /* Centra el icono horizontalmente */
+        transform: translateX(-50%); /* Ajusta finamente la posición del icono para que quede exactamente en el centro */
+        top: 10px; /* Ajusta la posición vertical si es necesario */
+        height: 60px; /* Ajusta el tamaño del icono para móviles */
+    }
+    nav {
+        height: 80px;
     }
     nav ul {
         position: fixed;
@@ -109,7 +116,16 @@ li a:hover {
     .checkbtn {
         display: block;
     }
+    #check:not(:checked) ~ ul {
+        position: fixed;
+        left: -100%; /* Asegura que el menú está completamente fuera de la pantalla cuando no está activo */
+        opacity: 0;
+        visibility: hidden; /* Oculta el menú para asegurar que no afecte la interacción con otros elementos */
+    }
+
     #check:checked ~ ul {
         left: 0;
+        opacity: 1;
+        visibility: visible; /* Muestra el menú cuando el checkbox está marcado */
     }
 }

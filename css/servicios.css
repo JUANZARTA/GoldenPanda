@@ -97,12 +97,12 @@
     .cuadro_cotizar {
         margin-bottom: 20px;  
         width: 250px;
-        height: 250px;
+        height: 180px;
     }
     .cuadro_img, .cuadro_img2 {
         margin-bottom: 20px;  
-        width: 220px;
-        height: 250px;
+        width: 250px;
+        height: 280px;
     }
     .lista_1 {
         display: block; /* Coloca las listas una sobre otra */

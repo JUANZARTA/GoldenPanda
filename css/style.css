@@ -197,15 +197,11 @@ h1, h2, h3, h4, h5 {
 .section {
   padding: 88px 24px;
   background-color: var(--bg);
-  background-image: radial-gradient(circle, rgba(var(--gold-dark-rgb), 0.07) 1px, transparent 1px);
-  background-size: 28px 28px;
   transition: background-color var(--transition);
 }
 
 .section-alt {
   background-color: var(--bg-alt);
-  background-image: radial-gradient(circle, rgba(var(--gold-dark-rgb), 0.05) 1px, transparent 1px);
-  background-size: 28px 28px;
 }
 
 .section-header {

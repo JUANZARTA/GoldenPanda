@@ -1,79 +1,160 @@
-/* Clients */
+/* ============================================================
+   NOSOTROS PAGE
+   ============================================================ */
 
-/* Contenedor de tarjetas */
-.cards {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 20px; /* Espaciado vertical entre filas de tarjetas */
-    flex-wrap: wrap;
+/* Intro: dos columnas de texto */
+.nos-intro {
+  padding-top: 104px;
 }
 
-/* Estilos de cada tarjeta */
-.cards .card {
-    background: var(--color-5);
-    display: flex;
-    width: 35%;
-    height: 180px;
-    margin: 0 20px;
+.nos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.nos-block .section-title.left::after {
+  margin-left: 0;
+}
+
+.nos-block p {
+  color: var(--text-muted);
+  font-size: 0.93rem;
+  line-height: 1.75;
+  margin-top: 16px;
+}
+
+/* Team */
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.team-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+}
+
+.team-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+
+.team-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--gold);
+}
+
+.team-info h4 {
+  font-size: 1rem;
+  margin-bottom: 3px;
+}
+
+.team-role {
+  font-size: 0.78rem;
+  color: var(--gold);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.team-info p {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* Terms */
+.nos-terms {
+  background: var(--bg);
+}
+
+.terms-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.terms-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.terms-block h4 {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.terms-block h4 i {
+  color: var(--gold);
+  font-size: 0.88rem;
+}
+
+.terms-block p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Closing message */
+.nos-gracias {
+  text-align: center;
+  padding: 64px 24px;
+}
+
+.gracias-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .nos-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .terms-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-card {
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    border-radius: 5px;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
-    margin: 0 -160px; /* Ajustar el espaciado horizontal */
+    text-align: center;
+  }
 }
-
-/* Imagen dentro de la tarjeta */
-.cards .card img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border: 2px solid var(--color-primario);
-    border-radius: 50%;
-    display: block;
-}
-
-/* Contenido de equipo dentro de la tarjeta */
-.cards .card > .card-equipo {
-    width: 60%;
-    color: var(--color-blanco);
-}
-
-/* Estilos para los párrafos dentro de .card-equipo */
-.cards .card > .card-equipo p {
-    font-weight: 300;
-    padding-top: 5px;
-}
-
-@media (max-width: 750px) {
-    .cards {
-        flex-direction: column;
-        align-items: stretch;
-        width: 100% !important;
-        padding: 0 !important;
-    }
-
-    .card {
-        width: 100% !important;
-        margin: 10px 0 !important;
-        height: auto !important;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .card img {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        margin-left: 20px;
-    }
-
-    .card-equipo {
-        padding: 10px;
-        display: flex;
-        margin-right: 10px;
-        align-items: center;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-    }
-}
-

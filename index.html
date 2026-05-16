@@ -1,214 +1,772 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-palette="deep-space">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=devide-width, initial-scale=1.0">
-    <title>Golden Panda</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/inicio.css">
-    <link rel="stylesheet" href="css/servicios.css">
-    <link rel="stylesheet" href="css/portafolio.css">
-    <link rel="stylesheet" href="css/contacto.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Panda — Software Developer</title>
+  <meta name="description" content="Desarrollo de páginas web, aplicaciones web e invitaciones digitales. Soluciones digitales a medida para tu negocio.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Golden Panda — Software Developer">
+  <meta property="og:description" content="Páginas web, apps e invitaciones digitales. Soluciones a medida para tu negocio.">
+  <meta property="og:image" content="Image/Logo_Color.png">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/png" href="Image/Icono.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
-    <!--Barra de Navegacion-->
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>            
-        </label>
-        <a href="./" class="enlace">
-            <img src="Image/Icono.png" alt="" class="icono_panda">
-        </a>
-        <ul>
-            <li><a id="inicio-link" class="active" href="#">Inicio</a></li>               
-            <li><a class="active" href="html/nosotros">Nosotros</a></li>                          
-            <li><a class="active" href="https://juancamilozartacam.wixsite.com/golden-panda" target="_blank">Portafolio</a></li> 
-            <li><a class="active" href="html/cotizar">Cotizar</a></li>                
-            <li><a id="contacto-link" class="active" href="#">Contacto</a></li>    
-        </ul>
-    </nav>
-    <!-- Seccion 1: Inicio -->
-    <header class="content inicio" id="inicio">
-        <div class="background-carousel">
-            <img src="Image/inicio/Imagen 1.jpeg" alt="Imagen 1" class="carousel">
-            <img src="Image/inicio/Imagen 2.jpeg" alt="Imagen 2" class="carousel">
-            <img src="Image/inicio/Imagen 3.jpeg" alt="Imagen 3" class="carousel">            
-            <img src="Image/inicio/Imagen 4.jpeg" alt="Imagen 3" class="carousel">            
-            <img src="Image/inicio/Imagen 5.jpeg" alt="Imagen 3" class="carousel">          
-            <img src="Image/inicio/Imagen 6.jpeg" alt="Imagen 3" class="carousel">
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="#inicio" class="navbar-brand">
+      <img src="Image/Icono.png" alt="Golden Panda" class="navbar-icon">
+      <span class="navbar-name">Golden Panda</span>
+    </a>
+    <ul class="navbar-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#portafolio">Portafolio</a></li>
+      <li><a href="#cotizar">Cotizar</a></li>
+      <li><a href="html/nosotros">Nosotros</a></li>
+      <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+    </ul>
+    <div class="navbar-controls">
+      <button class="btn-palette" id="btn-palette" title="Cambiar paleta" aria-label="Cambiar paleta de colores">
+        <i class="fas fa-palette"></i>
+      </button>
+      <button class="btn-theme" id="btn-theme" title="Modo claro/oscuro" aria-label="Cambiar modo">
+        <i class="fas fa-moon" id="theme-icon"></i>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#portafolio">Portafolio</a></li>
+      <li><a href="#cotizar">Cotizar</a></li>
+      <li><a href="html/nosotros">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="hero-carousel">
+      <img src="Image/inicio/Imagen 1.jpeg" class="hero-img active" alt="">
+      <img src="Image/inicio/Imagen 2.jpeg" class="hero-img" alt="">
+      <img src="Image/inicio/Imagen 3.jpeg" class="hero-img" alt="">
+      <img src="Image/inicio/Imagen 4.jpeg" class="hero-img" alt="">
+      <img src="Image/inicio/Imagen 5.jpeg" class="hero-img" alt="">
+      <img src="Image/inicio/Imagen 6.jpeg" class="hero-img" alt="">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="Image/Logo_Color.png" alt="Golden Panda" class="hero-logo">
+      <p class="hero-tagline">Tu imaginación <span class="gold">no tiene límites</span></p>
+      <div class="hero-ctas">
+        <a href="#cotizar" class="btn-hero-primary">Cotizar proyecto</a>
+        <a href="#portafolio" class="btn-hero-secondary">Ver portafolio</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>10+</strong>
+          <span>Proyectos web</span>
         </div>
-        <h2 class="marca">GOLDEN PANDA</h2>
-        <p class="slogan">Tu imaginación no tiene limites.</p>
-        <div class="btn-home">
-            <a href="html/nosotros" class="btn">Sobre Nosotros</a>
+        <div class="hero-stat-sep"></div>
+        <div class="hero-stat">
+          <strong>4</strong>
+          <span>Tipos de servicio</span>
         </div>
-    </header>
-    <!-- Sección 2: Servicios -->
-    <section class="content servicios" id="servicios">
-        <br><h1 class="titulo_1"><br>Servicios</h1>
-        <div>
-            <br><br>
-            <p class="parrafo_1">Ofrecemos soluciones innovadoras para potenciar tu marca y destacar en el mercado. 
-                <br>Descubre cómo nuestros servicios pueden transformar tu presencia empresarial. ¡Checa los servicios que brindamos!</p><br>
-            <div class="lista_1">
-                <ul>       
-                    <li>Videos Publicitarios</li>  
-                    <li>Edición de Fotografías</li>                                         
-                    <li>Desarrollo de Software</li>    
-                    <li>Desarrollo de Páginas Web</li>  
-                </ul>
-                <ul>     
-                    <li>Modelado 3D</li> 
-                    <li>Animación 2D</li>  
-                    <li>Diseño de Personajes</li>
-                </ul>
-                <ul>
-                    <li>Diseños Graficos</li>  
-                    <li>Diseño de Marcas</li>         
-                    <li>Tarjetas de presentación</li>   
-                </ul>
-            </div>
+        <div class="hero-stat-sep"></div>
+        <div class="hero-stat">
+          <strong>&lt;24h</strong>
+          <span>Respuesta</span>
         </div>
-    </section>
-    <!-- Seccion 3: Cuadro Cotizacion -->
-    <section class="content servicios_cotizar" id="servicios_cotizar"">
-        <div class="cuadro_img">
-            <img src="Image/servicios/1.jpeg" alt="Imagen 1" class="carousel-img">
-            <img src="Image/servicios/2.jpeg" alt="Imagen 1" class="carousel-img">
-            <img src="Image/servicios/3.jpeg" alt="Imagen 1" class="carousel-img">            
-        </div> 
-        <div class="cuadro_cotizar">
-            <p class="parrafo_2">Potencia tu marca con nuestras soluciones innovadoras. ¡Cotiza ahora y descubre cómo podemos ayudarte!</p>
-            <a href="html/cotizar" class="btn">Cotizar</a>
-        </div>  
-        <div class="cuadro_img2">
-            <img src="Image/servicios/6.jpeg" alt="Imagen 1" class="carousel-img2">
-            <img src="Image/servicios/4.jpeg" alt="Imagen 1" class="carousel-img2">            
-            <img src="Image/servicios/5.jpeg" alt="Imagen 1" class="carousel-img2">
-        </div> 
-        <!--
-        <div class="portafolio_servicio">
-            <h2 class="h2_portafolio">Desarrollo <br>Software</h2><br>
-            <p class="p_portafolio">Desarrollamos soluciones tecnológicas adaptables y eficientes.</p><br><br>
-            <a href="../HTML/programacion.html" class="ver-mas-btn">Ver más</a>
-        </div>        
-        <div class="portafolio_servicio">
-            <h2 class="h2_portafolio">Animación <br>2D y 3D</h2><br>
-            <p class="p_portafolio">Transformamos ideas en movimientos visuales cautivadores</p><br><br>
-            <a href="../HTML/animacion.html" class="ver-mas-btn">Ver más</a>
-        </div>        
-        <div class="portafolio_servicio">
-            <h2 class="h2_portafolio">Contenido <br>Audiovisual</h2><br>
-            <p class="p_portafolio">Un contenido entretenido y agradable que cautiva al publico.</p><br><br>
-            <a href="../HTML/publicidad.html" class="ver-mas-btn">Ver más</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Explorar</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="section">
+    <div class="section-header">
+      <h2 class="section-title">Servicios</h2>
+      <p class="section-sub">Soluciones digitales a medida para tu negocio · Respuesta en menos de 24 horas</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card featured-service reveal">
+        <span class="service-badge">Más solicitado</span>
+        <div class="service-icon"><i class="fas fa-globe"></i></div>
+        <h3>Páginas Web</h3>
+        <p>Diseño y desarrollo de sitios web modernos, responsivos y optimizados.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-heart"></i></div>
+        <h3>Invitaciones de 15</h3>
+        <p>Tarjetas digitales únicas y elegantes para quinceañeras.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-ring"></i></div>
+        <h3>Invitaciones de Boda</h3>
+        <p>Experiencias digitales memorables para el día más especial.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+        <h3>Aplicaciones Web</h3>
+        <p>Desarrollo de aplicaciones web a medida, robustas y escalables.</p>
+      </div>
+    </div>
+    <div class="services-more">
+      <button class="btn-more" id="btn-more-services">
+        <i class="fas fa-plus"></i> Más servicios
+      </button>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+      <h3 id="modal-title">Otros servicios</h3>
+      <p class="modal-sub">Además del desarrollo web, también ofrecemos:</p>
+      <div class="modal-grid">
+        <div class="modal-item"><i class="fas fa-pen-nib"></i><span>Diseño gráfico &amp; publicidad</span></div>
+        <div class="modal-item"><i class="fas fa-video"></i><span>Videos publicitarios</span></div>
+        <div class="modal-item"><i class="fas fa-trademark"></i><span>Diseños de marca</span></div>
+        <div class="modal-item"><i class="fas fa-id-card"></i><span>Tarjetas de presentación</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PORTAFOLIO -->
+  <section id="portafolio" class="section section-alt">
+    <div class="section-header">
+      <h2 class="section-title">Portafolio</h2>
+      <p class="section-sub">Proyectos que hablan por sí solos</p>
+    </div>
+    <div class="portfolio-grid">
+
+      <div class="portfolio-card reveal">
+        <div class="portfolio-thumb" style="--card-color: #1a5c3a;"><i class="fas fa-cash-register"></i></div>
+        <div class="portfolio-info">
+          <h4>Control Cash</h4>
+          <p>Sistema de gestión de caja y pagos</p>
+          <div class="portfolio-tech"><span>JavaScript</span><span>HTML/CSS</span></div>
+          <a href="#" class="btn-ver" target="_blank">Abrir proyecto <i class="fas fa-arrow-up-right-from-square"></i></a>
         </div>
-        -->
-    </section>    
-    <!-- Sección 4: Info extra -->
-    <section class="content info" id="info">
-        <div>                     
-            <div class="lista_2">
-                <ul>       
-                    <p class="parrafo_4">En Golden Panda, transformamos tus ideas en realidades visuales excepcionales. Especializados en animación 2D y 3D, ilustración, diseño gráfico y web, edición de fotos y videos, y la creación de páginas web, ofrecemos una gama completa de servicios creativos.
-                    <br><br>
-                    Cada proyecto es una oportunidad para innovar y sorprender, capturando la esencia de tu marca con precisión y creatividad. Confía en nosotros para darle vida a tu visión con animaciones vibrantes, diseños atractivos y soluciones digitales de alta calidad. En Golden Panda, tu éxito es nuestra misión, y estamos comprometidos a entregarte resultados que superen todas tus expectativas.
-                    </p>
-                    <div class="btn-about">
-                        <a href="https://juancamilozartacam.wixsite.com/golden-panda" class="btn" target="_blank">Ver Portafolio </a>
-                    </div>
-                </ul>
-                <ul>     
-                    <video controls autoplay loop class="info_video" style="width: 100%; height: auto;" alt="info_video">
-                        <source src="video/video_1.mov" type="video/mp4">
-                        Tu navegador no soporta el elemento de video.
-                    </video>
-                </ul>
-            </div>
-        </div>   
-    </section>
-    <!-- Seccion 5: Proyectos -->
-    <section class="content portafolio" id="portafolio">
-        <h1 class="titulo_1"><br>Proyectos</h1><br>
-        <p class="parrafo_1">Descubre ahora nuestros trabajos destacados</p>
-        <div class="portafolio_c">
-            <div class="cuadro_portafolio">
-                <h2 class="titulo_2">Desarrollo Software</h2> <br><br>
-                <p class="parrafo_2">Desarrollamos soluciones tecnológicas adaptables y eficientes.</p> <br>
-                <a href="html/programacion" class="btn">Ver más</a>
-            </div>  
-            <div class="cuadro_portafolio">
-                <h2 class="titulo_2">Animacion 2D & 3D</h2> <br><br>
-                <p class="parrafo_2">Desarrollamos soluciones tecnológicas adaptables y eficientes.</p> <br>
-                <a href="html/animacion" class="btn">Ver más</a>
-            </div>  
-            <div class="cuadro_portafolio">
-                <h2 class="titulo_2">Artes Visuales</h2> <br><br>
-                <p class="parrafo_2">Un contenido entretenido y agradable que cautiva al publico.</p> <br>
-                <a href="html/publicidad" class="btn">Ver más</a>
-            </div>  
+      </div>
+
+      <div class="portfolio-card reveal">
+        <div class="portfolio-thumb" style="--card-color: #1a3f6b;"><i class="fas fa-tasks"></i></div>
+        <div class="portfolio-info">
+          <h4>Mis Deberes</h4>
+          <p>App de gestión de tareas y deberes</p>
+          <div class="portfolio-tech"><span>JavaScript</span><span>HTML/CSS</span></div>
+          <a href="#" class="btn-ver" target="_blank">Abrir proyecto <i class="fas fa-arrow-up-right-from-square"></i></a>
         </div>
-    </section>
-    <!-- Seccion 6: contacto -->
-    <section class="content contacto" id="contacto">
-        <br><br>
-        <h1 class="titulo_1">Contacto</h1> 
-        <br><br>
-        <p class="parrafo_1">
-            Si desea obtener más información o ponerse en contacto con 
-            nosotros, no dude en hacerlo a través de los siguientes medios. <br><br>
-        </p>       
-		<div class="box-container">
-            <a href="https://wa.me/573128622945" target="_blank" class="box">
-				<i class="fab fa-whatsapp"></i>
-				<h4>WhatsApp</h3>
-			</a>		
-			<a href="https://www.facebook.com/profile.php?id=61557062733690" target="_blank" class="box">
-				<i class="fab fa-facebook"></i>
-				<h4>Facebook</h3>
-			</a>	
-            <a href="https://www.instagram.com/golden_panda_6/" target="_blank" class="box">
-				<i class="fab fa-instagram"></i>
-				<h4>Instagram</h3>
-			</a>				
-			<a href="https://www.tiktok.com/@goldenpanda_6" target="_blank" class="box">
-				<i class="fab fa-tiktok"></i>
-				<h4>Tik Tok</h3>
-			</a>		
-			<a href="https://github.com/JUANZARTA" target="_blank" class="box">
-				<i class="fab fa-github"></i>
-				<h4>GitHub</h3>
-			</a>					
-			<a href="https://www.youtube.com/channel/UCw4rNkcmYE79flslT1aB9RA" target="_blank" class="box">
-				<i class="fab fa-youtube"></i>
-				<h4>Youtube</h3>
-			</a>	
-		</div>
-    </section>
-    <!-- Seccion 7: Footer -->
-    <footer class="footer">    
-        <div class="columna">
-            <div class="logo" >
-                <img class="logo" src="Image/Logo_Color.png" alt="" height="100"> 
-            </div>
+      </div>
+
+      <div class="portfolio-card reveal">
+        <div class="portfolio-thumb" style="--card-color: #3d1a6b;"><i class="fas fa-calendar-alt"></i></div>
+        <div class="portfolio-info">
+          <h4>Agenda Co</h4>
+          <p>Plataforma de agendamiento online</p>
+          <div class="portfolio-tech"><span>JavaScript</span><span>HTML/CSS</span></div>
+          <a href="#" class="btn-ver" target="_blank">Abrir proyecto <i class="fas fa-arrow-up-right-from-square"></i></a>
         </div>
-    </footer>
-    <!-- Seccion 8: Creditos -->
-    <div class="footer-credito" id="footer" >
-        <p class="credito"> © 2023 Created by Golden Panda || Juan Camilo Zarta Campo, Software Developer.
-        </p>        
+      </div>
+
+      <div class="portfolio-card reveal">
+        <div class="portfolio-thumb" style="--card-color: #6b3010;"><i class="fas fa-utensils"></i></div>
+        <div class="portfolio-info">
+          <h4>Resto Bar</h4>
+          <p>Sitio web para restaurante bar</p>
+          <div class="portfolio-tech"><span>HTML/CSS</span><span>JavaScript</span></div>
+          <a href="#" class="btn-ver" target="_blank">Abrir proyecto <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal">
+        <div class="portfolio-thumb" style="--card-color: #6b1a3a;"><i class="fas fa-heart"></i></div>
+        <div class="portfolio-info">
+          <h4>Web Invitación 15</h4>
+          <p>Invitación digital para quinceañera</p>
+          <div class="portfolio-tech"><span>HTML/CSS</span><span>JavaScript</span></div>
+          <a href="#" class="btn-ver" target="_blank">Abrir proyecto <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal">
+        <div class="portfolio-thumb" style="--card-color: #1a4d6b;"><i class="fas fa-ring"></i></div>
+        <div class="portfolio-info">
+          <h4>Web Invitación Bodas</h4>
+          <p>Invitación digital para matrimonio</p>
+          <div class="portfolio-tech"><span>HTML/CSS</span><span>JavaScript</span></div>
+          <a href="#" class="btn-ver" target="_blank">Abrir proyecto <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal">
+        <div class="portfolio-thumb" style="--card-color: #3d6b1a;"><i class="fas fa-user-circle"></i></div>
+        <div class="portfolio-info">
+          <h4>Web Info Personal</h4>
+          <p>Sitio de información personal</p>
+          <div class="portfolio-tech"><span>HTML/CSS</span><span>JavaScript</span></div>
+          <a href="#" class="btn-ver" target="_blank">Abrir proyecto <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal">
+        <div class="portfolio-thumb" style="--card-color: #28196b;"><i class="fas fa-building"></i></div>
+        <div class="portfolio-info">
+          <h4>Contab</h4>
+          <p>Módulo de gestión de empresas · U. del Cauca</p>
+          <div class="portfolio-tech"><span>Java</span><span>MySQL</span><span>HTML/CSS</span></div>
+          <a href="#" class="btn-ver" target="_blank">Abrir proyecto <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COTIZAR -->
+  <section id="cotizar" class="section">
+    <div class="section-header">
+      <h2 class="section-title">Cotiza tu proyecto</h2>
+      <p class="section-sub">Precios transparentes · Consulta sin compromiso · Ajustamos a tu presupuesto</p>
+      <div class="currency-toggle">
+        <button class="currency-btn active" data-currency="cop">COP $</button>
+        <button class="currency-btn" data-currency="usd">USD $</button>
+      </div>
     </div>
 
-    <!-- Enlace de WhatsApp -->
-    <a class="whatsapp-icon" href="https://wa.me/573128622945" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <div class="pricing-tabs" id="pricing-tabs">
+      <button class="pricing-tab active" data-plans="plans-web">
+        <i class="fas fa-globe"></i><span>Páginas Web</span>
+      </button>
+      <button class="pricing-tab" data-plans="plans-quinces">
+        <i class="fas fa-heart"></i><span>Invitaciones 15</span>
+      </button>
+      <button class="pricing-tab" data-plans="plans-bodas">
+        <i class="fas fa-ring"></i><span>Invitaciones Boda</span>
+      </button>
+      <button class="pricing-tab" data-plans="plans-apps">
+        <i class="fas fa-laptop-code"></i><span>Apps Web</span>
+      </button>
+      <button class="pricing-tab tab-extras" data-opens-modal="modal-extras-overlay">
+        <i class="fas fa-plus-circle"></i><span>Más servicios</span>
+      </button>
+    </div>
 
-    <!-- Java Script -->
-    <script src="js/scripts.js"></script>
+    <!-- Páginas Web -->
+    <div class="pricing-plans active" id="plans-web">
+      <div class="plan-card reveal">
+        <h4 class="plan-name">Básico</h4>
+        <div class="plan-price">
+          <span class="p-cop">$700.000<small>COP</small></span>
+          <span class="p-usd">$200<small>USD</small></span>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i>Landing page · 1 a 3 secciones</li>
+          <li><i class="fas fa-check"></i>Diseño responsivo</li>
+          <li><i class="fas fa-check"></i>Formulario de contacto</li>
+          <li><i class="fas fa-check"></i>Entrega en 7 días</li>
+        </ul>
+        <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20plan%20B%C3%A1sico%20de%20P%C3%A1ginas%20Web" target="_blank" class="btn-plan">Quiero este plan</a>
+      </div>
+      <div class="plan-card featured reveal">
+        <span class="plan-badge">Más popular</span>
+        <h4 class="plan-name">Estándar</h4>
+        <div class="plan-price">
+          <span class="p-cop">$1.600.000<small>COP</small></span>
+          <span class="p-usd">$460<small>USD</small></span>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i>Hasta 6 secciones</li>
+          <li><i class="fas fa-check"></i>Diseño responsivo</li>
+          <li><i class="fas fa-check"></i>SEO básico</li>
+          <li><i class="fas fa-check"></i>Formulario de contacto</li>
+          <li><i class="fas fa-check"></i>Animaciones básicas</li>
+          <li><i class="fas fa-check"></i>Entrega en 15 días</li>
+        </ul>
+        <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20plan%20Est%C3%A1ndar%20de%20P%C3%A1ginas%20Web" target="_blank" class="btn-plan">Quiero este plan</a>
+      </div>
+      <div class="plan-card reveal">
+        <h4 class="plan-name">Premium</h4>
+        <div class="plan-price">
+          <span class="p-cop">$3.200.000<small>COP</small></span>
+          <span class="p-usd">$915<small>USD</small></span>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i>Secciones sin límite</li>
+          <li><i class="fas fa-check"></i>Blog o sección de noticias</li>
+          <li><i class="fas fa-check"></i>SEO avanzado</li>
+          <li><i class="fas fa-check"></i>Animaciones y efectos</li>
+          <li><i class="fas fa-check"></i>1 mes de mantenimiento</li>
+          <li><i class="fas fa-check"></i>Entrega en 25 días</li>
+        </ul>
+        <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20plan%20Premium%20de%20P%C3%A1ginas%20Web" target="_blank" class="btn-plan">Quiero este plan</a>
+      </div>
+    </div>
+
+    <!-- Invitaciones 15 -->
+    <div class="pricing-plans" id="plans-quinces">
+      <div class="plan-card reveal">
+        <h4 class="plan-name">Básico</h4>
+        <div class="plan-price">
+          <span class="p-cop">$100.000<small>COP</small></span>
+          <span class="p-usd">$29<small>USD</small></span>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i>Diseño estándar</li>
+          <li><i class="fas fa-check"></i>Cuenta regresiva</li>
+          <li><i class="fas fa-check"></i>Galería de fotos básica</li>
+          <li><i class="fas fa-check"></i>Entrega en 3 días</li>
+        </ul>
+        <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20plan%20B%C3%A1sico%20de%20Invitaci%C3%B3n%20de%2015" target="_blank" class="btn-plan">Quiero este plan</a>
+      </div>
+      <div class="plan-card featured reveal">
+        <span class="plan-badge">Más popular</span>
+        <h4 class="plan-name">Estándar</h4>
+        <div class="plan-price">
+          <span class="p-cop">$180.000<small>COP</small></span>
+          <span class="p-usd">$52<small>USD</small></span>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i>Diseño personalizado</li>
+          <li><i class="fas fa-check"></i>Cuenta regresiva</li>
+          <li><i class="fas fa-check"></i>Galería de fotos</li>
+          <li><i class="fas fa-check"></i>Música de fondo</li>
+          <li><i class="fas fa-check"></i>Entrega en 5 días</li>
+        </ul>
+        <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20plan%20Est%C3%A1ndar%20de%20Invitaci%C3%B3n%20de%2015" target="_blank" class="btn-plan">Quiero este plan</a>
+      </div>
+      <div class="plan-card reveal">
+        <h4 class="plan-name">Premium</h4>
+        <div class="plan-price">
+          <span class="p-cop">$280.000<small>COP</small></span>
+          <span class="p-usd">$80<small>USD</small></span>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i>Diseño premium exclusivo</li>
+          <li><i class="fas fa-check"></i>Cuenta regresiva</li>
+          <li><i class="fas fa-check"></i>Galería con animaciones</li>
+          <li><i class="fas fa-check"></i>Música de fondo</li>
+          <li><i class="fas fa-check"></i>Mapa de ubicación</li>
+          <li><i class="fas fa-check"></i>Confirmación de asistencia (RSVP)</li>
+          <li><i class="fas fa-check"></i>Entrega en 7 días</li>
+        </ul>
+        <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20plan%20Premium%20de%20Invitaci%C3%B3n%20de%2015" target="_blank" class="btn-plan">Quiero este plan</a>
+      </div>
+    </div>
+
+    <!-- Invitaciones Boda -->
+    <div class="pricing-plans" id="plans-bodas">
+      <div class="plan-card reveal">
+        <h4 class="plan-name">Básico</h4>
+        <div class="plan-price">
+          <span class="p-cop">$130.000<small>COP</small></span>
+          <span class="p-usd">$37<small>USD</small></span>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i>Diseño elegante</li>
+          <li><i class="fas fa-check"></i>Cuenta regresiva</li>
+          <li><i class="fas fa-check"></i>Información del evento</li>
+          <li><i class="fas fa-check"></i>Entrega en 3 días</li>
+        </ul>
+        <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20plan%20B%C3%A1sico%20de%20Invitaci%C3%B3n%20de%20Boda" target="_blank" class="btn-plan">Quiero este plan</a>
+      </div>
+      <div class="plan-card featured reveal">
+        <span class="plan-badge">Más popular</span>
+        <h4 class="plan-name">Estándar</h4>
+        <div class="plan-price">
+          <span class="p-cop">$220.000<small>COP</small></span>
+          <span class="p-usd">$63<small>USD</small></span>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i>Diseño personalizado</li>
+          <li><i class="fas fa-check"></i>Cuenta regresiva</li>
+          <li><i class="fas fa-check"></i>Galería de fotos</li>
+          <li><i class="fas fa-check"></i>Mapa de ubicación</li>
+          <li><i class="fas fa-check"></i>Entrega en 5 días</li>
+        </ul>
+        <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20plan%20Est%C3%A1ndar%20de%20Invitaci%C3%B3n%20de%20Boda" target="_blank" class="btn-plan">Quiero este plan</a>
+      </div>
+      <div class="plan-card reveal">
+        <h4 class="plan-name">Premium</h4>
+        <div class="plan-price">
+          <span class="p-cop">$350.000<small>COP</small></span>
+          <span class="p-usd">$100<small>USD</small></span>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i>Diseño premium exclusivo</li>
+          <li><i class="fas fa-check"></i>Cuenta regresiva</li>
+          <li><i class="fas fa-check"></i>Galería con animaciones</li>
+          <li><i class="fas fa-check"></i>Música de fondo</li>
+          <li><i class="fas fa-check"></i>Mapa de ubicación</li>
+          <li><i class="fas fa-check"></i>Confirmación de asistencia (RSVP)</li>
+          <li><i class="fas fa-check"></i>Entrega en 7 días</li>
+        </ul>
+        <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20plan%20Premium%20de%20Invitaci%C3%B3n%20de%20Boda" target="_blank" class="btn-plan">Quiero este plan</a>
+      </div>
+    </div>
+
+    <!-- Apps Web -->
+    <div class="pricing-plans" id="plans-apps">
+      <div class="plan-card reveal">
+        <h4 class="plan-name">Básico</h4>
+        <div class="plan-price">
+          <span class="p-cop">$2.200.000<small>COP</small></span>
+          <span class="p-usd">$630<small>USD</small></span>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i>1 a 2 módulos</li>
+          <li><i class="fas fa-check"></i>CRUD básico</li>
+          <li><i class="fas fa-check"></i>Autenticación simple</li>
+          <li><i class="fas fa-check"></i>Entrega en 20 días</li>
+        </ul>
+        <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20plan%20B%C3%A1sico%20de%20Aplicaci%C3%B3n%20Web" target="_blank" class="btn-plan">Quiero este plan</a>
+      </div>
+      <div class="plan-card featured reveal">
+        <span class="plan-badge">Más popular</span>
+        <h4 class="plan-name">Estándar</h4>
+        <div class="plan-price">
+          <span class="p-cop">$4.800.000<small>COP</small></span>
+          <span class="p-usd">$1.375<small>USD</small></span>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i>Múltiples módulos</li>
+          <li><i class="fas fa-check"></i>Autenticación de usuarios</li>
+          <li><i class="fas fa-check"></i>Dashboard básico</li>
+          <li><i class="fas fa-check"></i>Reportes simples</li>
+          <li><i class="fas fa-check"></i>Entrega en 40 días</li>
+        </ul>
+        <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20plan%20Est%C3%A1ndar%20de%20Aplicaci%C3%B3n%20Web" target="_blank" class="btn-plan">Quiero este plan</a>
+      </div>
+      <div class="plan-card reveal">
+        <h4 class="plan-name">Premium</h4>
+        <div class="plan-price">
+          <span class="p-cop">$9.000.000<small>COP</small></span>
+          <span class="p-usd">$2.575<small>USD</small></span>
+        </div>
+        <ul class="plan-features">
+          <li><i class="fas fa-check"></i>App empresarial completa</li>
+          <li><i class="fas fa-check"></i>Roles y permisos</li>
+          <li><i class="fas fa-check"></i>Dashboard avanzado</li>
+          <li><i class="fas fa-check"></i>Reportes y exportación</li>
+          <li><i class="fas fa-check"></i>Integración con APIs</li>
+          <li><i class="fas fa-check"></i>1 mes de mantenimiento</li>
+          <li><i class="fas fa-check"></i>Entrega en 60 días</li>
+        </ul>
+        <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20plan%20Premium%20de%20Aplicaci%C3%B3n%20Web" target="_blank" class="btn-plan">Quiero este plan</a>
+      </div>
+    </div>
+
+    <!-- Otros servicios -->
+    <div class="pricing-other">
+      <div class="pricing-other-inner">
+        <p>¿Necesitás diseño gráfico, branding o un servicio personalizado?</p>
+        <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20cotizar%20un%20servicio" target="_blank" class="btn-other">
+          <i class="fab fa-whatsapp"></i> Contactanos directamente
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section section-alt">
+    <div class="section-header">
+      <h2 class="section-title">Contacto</h2>
+      <p class="section-sub">¿Tenés un proyecto en mente? Hablemos.</p>
+    </div>
+    <div class="contact-grid">
+      <a href="https://wa.me/573128622945" target="_blank" class="contact-card reveal">
+        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+        <span class="contact-label">WhatsApp</span>
+        <span class="contact-hint">+57 312 862 2945</span>
+      </a>
+      <a href="mailto:lordimpi26@gmail.com" class="contact-card reveal">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+        <span class="contact-label">Email</span>
+        <span class="contact-hint">goldenpanda.kzgmail.com</span>
+      </a>
+      <a href="https://github.com/JUANZARTA" target="_blank" class="contact-card reveal">
+        <div class="contact-icon"><i class="fab fa-github"></i></div>
+        <span class="contact-label">GitHub</span>
+        <span class="contact-hint">github.com/JUANZARTA</span>
+      </a>
+    </div>
+    <p class="contact-note">
+      <i class="fas fa-clock"></i> Respondemos en menos de 24 horas · Lunes a Sábado · 8am – 8pm
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <img src="Image/Logo_Color.png" alt="Golden Panda" class="footer-logo">
+    <nav class="footer-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#cotizar">Cotizar</a>
+      <a href="html/nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <p class="footer-credits">© 2025 <span class="gold">Juan Camilo Zarta</span> — Software Developer</p>
+  </footer>
+
+  <!-- MODAL EXTRAS — MÁS SERVICIOS PRICING -->
+  <div class="modal-overlay" id="modal-extras-overlay">
+    <div class="modal modal-extras" role="dialog" aria-modal="true" aria-labelledby="modal-extras-title">
+      <button class="modal-close" id="modal-extras-close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+      <div class="modal-extras-header">
+        <h3 id="modal-extras-title">Más servicios</h3>
+        <p class="modal-sub">Diseño, publicidad e identidad visual</p>
+      </div>
+
+      <div class="extras-tabs">
+        <button class="extras-tab active" data-eplans="ep-diseno">
+          <i class="fas fa-pen-nib"></i><span>Diseño Gráfico</span>
+        </button>
+        <button class="extras-tab" data-eplans="ep-videos">
+          <i class="fas fa-video"></i><span>Videos Publicitarios</span>
+        </button>
+        <button class="extras-tab" data-eplans="ep-marca">
+          <i class="fas fa-trademark"></i><span>Diseño de Marca</span>
+        </button>
+        <button class="extras-tab" data-eplans="ep-tarjetas">
+          <i class="fas fa-id-card"></i><span>Tarjetas</span>
+        </button>
+      </div>
+
+      <!-- Diseño Gráfico & Publicidad -->
+      <div class="extras-plans active" id="ep-diseno">
+        <div class="plan-card">
+          <h4 class="plan-name">Pack Básico</h4>
+          <div class="plan-price">
+            <span class="p-cop">$150.000<small>COP</small></span>
+            <span class="p-usd">$43<small>USD</small></span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i>5 piezas: posts, stories y banners</li>
+            <li><i class="fas fa-check"></i>Formato digital listo para publicar</li>
+            <li><i class="fas fa-check"></i>1 ronda de revisión</li>
+            <li><i class="fas fa-check"></i>Archivos PNG y JPG</li>
+            <li><i class="fas fa-check"></i>Entrega en 4 días</li>
+          </ul>
+          <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20Pack%20B%C3%A1sico%20de%20Dise%C3%B1o%20Gr%C3%A1fico" target="_blank" class="btn-plan">Quiero este plan</a>
+        </div>
+        <div class="plan-card featured">
+          <span class="plan-badge">Más popular</span>
+          <h4 class="plan-name">Pack Estándar</h4>
+          <div class="plan-price">
+            <span class="p-cop">$280.000<small>COP</small></span>
+            <span class="p-usd">$80<small>USD</small></span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i>10 piezas variadas por plataforma</li>
+            <li><i class="fas fa-check"></i>Instagram, Facebook, TikTok</li>
+            <li><i class="fas fa-check"></i>2 rondas de revisión</li>
+            <li><i class="fas fa-check"></i>Archivos PNG, JPG y PDF</li>
+            <li><i class="fas fa-check"></i>Entrega en 6 días</li>
+          </ul>
+          <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20Pack%20Est%C3%A1ndar%20de%20Dise%C3%B1o%20Gr%C3%A1fico" target="_blank" class="btn-plan">Quiero este plan</a>
+        </div>
+        <div class="plan-card">
+          <h4 class="plan-name">Pack Pro</h4>
+          <div class="plan-price">
+            <span class="p-cop">$480.000<small>COP</small></span>
+            <span class="p-usd">$137<small>USD</small></span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i>18 piezas variadas</li>
+            <li><i class="fas fa-check"></i>Todos los formatos de red social</li>
+            <li><i class="fas fa-check"></i>Revisiones ilimitadas</li>
+            <li><i class="fas fa-check"></i>PNG, JPG, PDF y archivos editables</li>
+            <li><i class="fas fa-check"></i>Entrega en 10 días</li>
+          </ul>
+          <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20Pack%20Pro%20de%20Dise%C3%B1o%20Gr%C3%A1fico" target="_blank" class="btn-plan">Quiero este plan</a>
+        </div>
+      </div>
+
+      <!-- Videos Publicitarios -->
+      <div class="extras-plans" id="ep-videos">
+        <div class="plan-card">
+          <h4 class="plan-name">Pack Básico</h4>
+          <div class="plan-price">
+            <span class="p-cop">$170.000<small>COP</small></span>
+            <span class="p-usd">$49<small>USD</small></span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i>1 video corto (15–30 seg)</li>
+            <li><i class="fas fa-check"></i>Edición con texto y música</li>
+            <li><i class="fas fa-check"></i>Formato vertical (Reels / TikTok)</li>
+            <li><i class="fas fa-check"></i>1 ronda de revisión</li>
+            <li><i class="fas fa-check"></i>Entrega en 4 días</li>
+          </ul>
+          <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20Pack%20B%C3%A1sico%20de%20Videos%20Publicitarios" target="_blank" class="btn-plan">Quiero este plan</a>
+        </div>
+        <div class="plan-card featured">
+          <span class="plan-badge">Más popular</span>
+          <h4 class="plan-name">Pack Estándar</h4>
+          <div class="plan-price">
+            <span class="p-cop">$350.000<small>COP</small></span>
+            <span class="p-usd">$100<small>USD</small></span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i>3 videos (15–60 seg c/u)</li>
+            <li><i class="fas fa-check"></i>Edición con captions, música y efectos</li>
+            <li><i class="fas fa-check"></i>Formato para Reels, TikTok y Stories</li>
+            <li><i class="fas fa-check"></i>2 rondas de revisión</li>
+            <li><i class="fas fa-check"></i>Entrega en 7 días</li>
+          </ul>
+          <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20Pack%20Est%C3%A1ndar%20de%20Videos%20Publicitarios" target="_blank" class="btn-plan">Quiero este plan</a>
+        </div>
+        <div class="plan-card">
+          <h4 class="plan-name">Pack Pro</h4>
+          <div class="plan-price">
+            <span class="p-cop">$620.000<small>COP</small></span>
+            <span class="p-usd">$177<small>USD</small></span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i>6 videos variados</li>
+            <li><i class="fas fa-check"></i>Motion graphics incluidos</li>
+            <li><i class="fas fa-check"></i>Adaptación a múltiples plataformas</li>
+            <li><i class="fas fa-check"></i>Revisiones ilimitadas</li>
+            <li><i class="fas fa-check"></i>Entrega en 12 días</li>
+          </ul>
+          <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20Pack%20Pro%20de%20Videos%20Publicitarios" target="_blank" class="btn-plan">Quiero este plan</a>
+        </div>
+      </div>
+
+      <!-- Diseño de Marca -->
+      <div class="extras-plans" id="ep-marca">
+        <div class="plan-card">
+          <h4 class="plan-name">Esencial</h4>
+          <div class="plan-price">
+            <span class="p-cop">$350.000<small>COP</small></span>
+            <span class="p-usd">$100<small>USD</small></span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i>Diseño de logotipo</li>
+            <li><i class="fas fa-check"></i>Paleta de colores corporativa</li>
+            <li><i class="fas fa-check"></i>1 variante del logo</li>
+            <li><i class="fas fa-check"></i>Archivos PNG, JPG y SVG</li>
+            <li><i class="fas fa-check"></i>Entrega en 5 días</li>
+          </ul>
+          <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20plan%20Esencial%20de%20Dise%C3%B1o%20de%20Marca" target="_blank" class="btn-plan">Quiero este plan</a>
+        </div>
+        <div class="plan-card featured">
+          <span class="plan-badge">Recomendado</span>
+          <h4 class="plan-name">Identidad</h4>
+          <div class="plan-price">
+            <span class="p-cop">$680.000<small>COP</small></span>
+            <span class="p-usd">$194<small>USD</small></span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i>Logo + variantes (color, blanco, negro)</li>
+            <li><i class="fas fa-check"></i>Paleta de colores completa</li>
+            <li><i class="fas fa-check"></i>Selección tipográfica</li>
+            <li><i class="fas fa-check"></i>Manual de uso básico (PDF)</li>
+            <li><i class="fas fa-check"></i>Todos los formatos de archivo</li>
+            <li><i class="fas fa-check"></i>Entrega en 8 días</li>
+          </ul>
+          <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20plan%20Identidad%20de%20Dise%C3%B1o%20de%20Marca" target="_blank" class="btn-plan">Quiero este plan</a>
+        </div>
+        <div class="plan-card">
+          <h4 class="plan-name">Branding Completo</h4>
+          <div class="plan-price">
+            <span class="p-cop">$1.200.000<small>COP</small></span>
+            <span class="p-usd">$343<small>USD</small></span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i>Identidad visual completa</li>
+            <li><i class="fas fa-check"></i>Logo con todas sus variantes</li>
+            <li><i class="fas fa-check"></i>Paleta, tipografía e íconos</li>
+            <li><i class="fas fa-check"></i>Manual de marca profesional</li>
+            <li><i class="fas fa-check"></i>Aplicaciones (tarjeta, membrete, etc.)</li>
+            <li><i class="fas fa-check"></i>Entrega en 15 días</li>
+          </ul>
+          <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20Branding%20Completo" target="_blank" class="btn-plan">Quiero este plan</a>
+        </div>
+      </div>
+
+      <!-- Tarjetas de Presentación -->
+      <div class="extras-plans" id="ep-tarjetas">
+        <div class="plan-card">
+          <h4 class="plan-name">Digital</h4>
+          <div class="plan-price">
+            <span class="p-cop">$80.000<small>COP</small></span>
+            <span class="p-usd">$23<small>USD</small></span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i>Diseño digital para compartir</li>
+            <li><i class="fas fa-check"></i>Frente de la tarjeta</li>
+            <li><i class="fas fa-check"></i>Archivo PNG y PDF</li>
+            <li><i class="fas fa-check"></i>1 ronda de revisión</li>
+            <li><i class="fas fa-check"></i>Entrega en 2 días</li>
+          </ul>
+          <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20plan%20Digital%20de%20Tarjetas%20de%20Presentaci%C3%B3n" target="_blank" class="btn-plan">Quiero este plan</a>
+        </div>
+        <div class="plan-card featured">
+          <span class="plan-badge">Más popular</span>
+          <h4 class="plan-name">Imprimible</h4>
+          <div class="plan-price">
+            <span class="p-cop">$150.000<small>COP</small></span>
+            <span class="p-usd">$43<small>USD</small></span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i>Frente y reverso</li>
+            <li><i class="fas fa-check"></i>Listo para imprenta (sangrado incluido)</li>
+            <li><i class="fas fa-check"></i>Archivo PNG, PDF y CMYK</li>
+            <li><i class="fas fa-check"></i>2 rondas de revisión</li>
+            <li><i class="fas fa-check"></i>Entrega en 3 días</li>
+          </ul>
+          <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20plan%20Imprimible%20de%20Tarjetas%20de%20Presentaci%C3%B3n" target="_blank" class="btn-plan">Quiero este plan</a>
+        </div>
+        <div class="plan-card">
+          <h4 class="plan-name">Completo</h4>
+          <div class="plan-price">
+            <span class="p-cop">$250.000<small>COP</small></span>
+            <span class="p-usd">$71<small>USD</small></span>
+          </div>
+          <ul class="plan-features">
+            <li><i class="fas fa-check"></i>Tarjeta digital interactiva</li>
+            <li><i class="fas fa-check"></i>Versión imprimible completa</li>
+            <li><i class="fas fa-check"></i>Todos los formatos de archivo</li>
+            <li><i class="fas fa-check"></i>Archivos fuente editables</li>
+            <li><i class="fas fa-check"></i>Revisiones ilimitadas</li>
+            <li><i class="fas fa-check"></i>Entrega en 4 días</li>
+          </ul>
+          <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20el%20plan%20Completo%20de%20Tarjetas%20de%20Presentaci%C3%B3n" target="_blank" class="btn-plan">Quiero este plan</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FLOAT WHATSAPP -->
+  <a href="https://wa.me/573128622945" target="_blank" class="float-wa" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="js/scripts.js"></script>
 </body>
 </html>

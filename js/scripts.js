@@ -1,119 +1,185 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const images = document.querySelectorAll('.carousel');
-    let counter = 0;
+document.addEventListener('DOMContentLoaded', () => {
 
-    function showImage() {
-        images.forEach((image, index) => {
-            if (index === counter) {
-                image.style.opacity = '1';
-            } else {
-                image.style.opacity = '0';
-            }
-        });
+  // ============================================================
+  // HERO CAROUSEL
+  // ============================================================
+  const heroImgs = document.querySelectorAll('.hero-img');
+  if (heroImgs.length > 1) {
+    let current = 0;
+    setInterval(() => {
+      heroImgs[current].classList.remove('active');
+      current = (current + 1) % heroImgs.length;
+      heroImgs[current].classList.add('active');
+    }, 6000);
+  }
 
-        setTimeout(() => {
-            if (counter >= images.length - 1) {
-                counter = 0;
-            } else {
-                counter++;
-            }
-            showImage();
-        }, 6000); 
+  // ============================================================
+  // MOBILE MENU
+  // ============================================================
+  const hamburger     = document.getElementById('hamburger');
+  const mobileMenu    = document.getElementById('mobile-menu');
+  const mobileOverlay = document.getElementById('mobile-overlay');
+
+  function toggleMenu(open) {
+    hamburger?.classList.toggle('open', open);
+    mobileMenu?.classList.toggle('open', open);
+    mobileOverlay?.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  hamburger?.addEventListener('click', () =>
+    toggleMenu(!mobileMenu.classList.contains('open'))
+  );
+  mobileOverlay?.addEventListener('click', () => toggleMenu(false));
+  document.querySelectorAll('.mobile-menu a').forEach(a =>
+    a.addEventListener('click', () => toggleMenu(false))
+  );
+
+  // ============================================================
+  // DARK / LIGHT MODE
+  // ============================================================
+  const root      = document.documentElement;
+  const themeBtn  = document.getElementById('btn-theme');
+  const themeIcon = document.getElementById('theme-icon');
+
+  function applyTheme(mode) {
+    root.classList.toggle('light', mode === 'light');
+    themeIcon.className = mode === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+    localStorage.setItem('gp-theme', mode);
+  }
+
+  applyTheme(localStorage.getItem('gp-theme') || 'dark');
+
+  themeBtn?.addEventListener('click', () =>
+    applyTheme(root.classList.contains('light') ? 'dark' : 'light')
+  );
+
+  // ============================================================
+  // PALETTE SWITCHER  (deep-space → warm → clean → loop)
+  // ============================================================
+  const palettes   = ['deep-space', 'warm', 'clean'];
+  const paletteBtn = document.getElementById('btn-palette');
+
+  function applyPalette(name) {
+    root.dataset.palette = name;
+    localStorage.setItem('gp-palette', name);
+  }
+
+  applyPalette(localStorage.getItem('gp-palette') || 'deep-space');
+
+  paletteBtn?.addEventListener('click', () => {
+    const idx = palettes.indexOf(root.dataset.palette);
+    applyPalette(palettes[(idx + 1) % palettes.length]);
+  });
+
+  // ============================================================
+  // MODAL — MÁS SERVICIOS
+  // ============================================================
+  const modalOverlay = document.getElementById('modal-overlay');
+  const btnMore      = document.getElementById('btn-more-services');
+  const btnClose     = document.getElementById('modal-close');
+
+  function openModal()  {
+    modalOverlay?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    modalOverlay?.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  btnMore?.addEventListener('click', openModal);
+  btnClose?.addEventListener('click', closeModal);
+  modalOverlay?.addEventListener('click', e => {
+    if (e.target === modalOverlay) closeModal();
+  });
+
+  // ============================================================
+  // PRICING TABS (main — supports data-opens-modal for extras)
+  // ============================================================
+  document.querySelectorAll('.pricing-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      if (tab.dataset.opensModal) {
+        document.getElementById(tab.dataset.opensModal)?.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        return;
+      }
+      const target = tab.dataset.plans;
+      document.querySelectorAll('.pricing-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.pricing-plans').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(target)?.classList.add('active');
+    });
+  });
+
+  // ============================================================
+  // EXTRAS MODAL — sub-tabs + close
+  // ============================================================
+  const extrasOverlay = document.getElementById('modal-extras-overlay');
+  const extrasClose   = document.getElementById('modal-extras-close');
+
+  extrasClose?.addEventListener('click', () => {
+    extrasOverlay?.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+
+  extrasOverlay?.addEventListener('click', e => {
+    if (e.target === extrasOverlay) {
+      extrasOverlay.classList.remove('open');
+      document.body.style.overflow = '';
     }
+  });
 
-    showImage();
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const links = document.querySelectorAll("nav ul li a");
-    links.forEach(link => {
-        link.addEventListener("click", () => {
-            const checkBox = document.getElementById("check");
-            checkBox.checked = false;
-        });
+  document.querySelectorAll('.extras-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.eplans;
+      document.querySelectorAll('.extras-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.extras-plans').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(target)?.classList.add('active');
     });
-});
+  });
 
-document.addEventListener("DOMContentLoaded", function () {
-    var dropdownParents = document.querySelectorAll('.dropdown-parent');
-
-    // Itera sobre cada elemento li
-    dropdownParents.forEach(function (parent) {
-        // Agrega un evento clic a cada elemento li
-        parent.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            // Encuentra el submenú dentro del elemento li actual
-            var submenu = parent.querySelector('.dropdown-content');
-
-            // Alternar la visibilidad del submenú
-            if (submenu.style.display === 'block') {
-                submenu.style.display = 'none';
-            } else {
-                submenu.style.display = 'block';
-            }
-        });
-    });
-
-    // ... (otro código) ...
-});
-
-// CARRUCEL DE IMÁGENES DE SERVICIOS
-document.addEventListener('DOMContentLoaded', function () {
-    const images = document.querySelectorAll('.cuadro_img .carousel-img');
-    let counter = 0;
-
-    function showImage() {
-        images.forEach((image, index) => {
-            if (index === counter) {
-                image.classList.add('active');
-            } else {
-                image.classList.remove('active');
-            }
-        });
-
-        setTimeout(() => {
-            counter = (counter + 1) % images.length;
-            showImage();
-        }, 3000); // Cambia la imagen cada 2 segundos
+  // Escape closes both modals
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      extrasOverlay?.classList.remove('open');
+      closeModal();
+      document.body.style.overflow = '';
     }
+  });
 
-    showImage();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const images = document.querySelectorAll('.cuadro_img2 .carousel-img2');
-    let counter = 0;
-
-    function showImage() {
-        images.forEach((image, index) => {
-            if (index === counter) {
-                image.classList.add('active');
-            } else {
-                image.classList.remove('active');
-            }
-        });
-
-        setTimeout(() => {
-            counter = (counter + 1) % images.length;
-            showImage();
-        }, 3000); // Cambia la imagen cada 2 segundos
-    }
-
-    showImage();
-});
-
-//Rutas Href
-document.addEventListener('DOMContentLoaded', function() {
-    // Manejador para el enlace "Inicio"
-    document.getElementById('inicio-link').addEventListener('click', function(event) {
-        event.preventDefault(); // Previene el comportamiento por defecto del enlace
-        document.getElementById('inicio').scrollIntoView({ behavior: 'smooth' });
+  // ============================================================
+  // CURRENCY TOGGLE — COP / USD
+  // ============================================================
+  document.querySelectorAll('.currency-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.currency-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.body.classList.toggle('show-usd', btn.dataset.currency === 'usd');
     });
+  });
 
-    // Manejador para el enlace "Contacto"
-    document.getElementById('contacto-link').addEventListener('click', function(event) {
-        event.preventDefault(); // Previene el comportamiento por defecto del enlace
-        document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+  // ============================================================
+  // SCROLL REVEAL
+  // ============================================================
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ============================================================
+  // NAVBAR SCROLL SHADOW
+  // ============================================================
+  const navbar = document.getElementById('navbar');
+  const onScroll = () => navbar?.classList.toggle('scrolled', window.scrollY > 24);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
 });

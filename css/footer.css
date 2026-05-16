@@ -1,138 +1,68 @@
-/* Footer */
+/* ============================================================
+   FOOTER
+   ============================================================ */
 .footer {
-    display: flex;
-    justify-content: space-around;
-    background: linear-gradient(to top left, var(--color-4), var(--color-3)), url('../Image/inicio/Imagen\ footer.png');
-    height: 250px;
-    padding: 20px;
-    flex-wrap: wrap; /* Añadido para permitir el ajuste de las columnas en filas */
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  padding: 52px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  transition: background var(--transition), border-color var(--transition);
 }
 
-/* Logo */
-.logo {
-    margin-top: 5px;
-    height: 200px;
+.footer-logo {
+  height: 76px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.3));
 }
 
-/* Footer Icons */
-.footer-icons {
-    color: var(--color-blanco);
+.footer-credits {
+  font-size: 0.83rem;
+  color: var(--text-muted);
 }
 
-.footer-icons i {
-    font-size: 60%; /* Corregido: Se cambió de 'size' a 'font-size' */
-    color: var(--color-primario);
+.footer-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Créditos */
-.footer-credito {
-    background: linear-gradient(to top, var(--color-3), var(--color-2));
-    height: 25px;
+.footer-links a {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  transition: color var(--transition);
 }
 
-.credito {
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    color: var(--color-primario);
-    font-size: 90%;
+.footer-links a:hover {
+  color: var(--gold);
 }
 
-/* Icono de WhatsApp */
-.whatsapp-icon {
-    position: fixed;
-    bottom: 80px; 
-    right: 60px; 
-    width: 60px; 
-    height: 60px; 
-    background: var(--color-primario);
-    color: var(--color-blanco);
-    padding: 12px;
-    border-radius: 100%;
-    text-align: center;
-    font-size: 34px;
-    z-index: 10;
+/* ============================================================
+   FLOATING WHATSAPP
+   ============================================================ */
+.float-wa {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 52px;
+  height: 52px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4);
+  z-index: 600;
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.whatsapp-icon:hover {
-    background: var(--color-secundario2);
-    color: var(--color-blanco); 
-}
-
-/* Icono de Contacto */
-.contacto-icon {
-    position: fixed;
-    bottom: 80px; 
-    right: 60px; 
-    width: 60px; 
-    height: 60px; 
-    background: var(--color-primario);
-    color: var(--color-blanco);
-    padding: 6px;
-    border-radius: 100%;
-    text-align: center;
-    font-size: 34px;
-    z-index: 10;
-}
-
-.contacto-icon:hover {
-    background: var(--color-secundario2);
-    color: var(--color-blanco); 
-}
-
-/* Ajustes para el diseño responsive en tablets */
-@media (max-width: 952px) {
-    .logo {
-        margin-top: 75px;
-    }
-
-    .portafolio {
-        height: 60vh;
-    }
-
-    .footer {    
-        height: 300px;    
-    }
-}
-
-/* Ajustes para el diseño responsive en celulares */
-@media (max-width: 750px) {
-    footer {
-        justify-content: center; 
-        height: 300px;        
-    }
-
-    .logo {
-        margin-top: 5px;
-    }
-
-    .p_footer {
-        text-align: justify;
-    }
-
-    .columna {
-        flex: none; 
-        width: 100%;
-        margin-right: 0;
-    }      
-
-    .portafolio {
-        height: 120vh;
-    }  
-
-    .icono {
-        margin-top: -200px;
-    }
-
-    .whatsapp-icon {
-        right: 30px; /* Ajusta según sea necesario */
-    }
-
-    .titulo {
-        margin-bottom: -10px;
-    }
-
-    .credito {
-        margin-left: 30px;
-        margin-right: 30px;
-    }
+.float-wa:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 26px rgba(37, 211, 102, 0.6);
 }

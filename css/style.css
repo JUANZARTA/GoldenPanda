@@ -4,19 +4,19 @@
 
 /* --- Deep Space · Dark (default) --- */
 :root {
-  --bg:            #0C0C14;
-  --bg-alt:        #13131F;
-  --surface:       #1A1A28;
-  --surface-hover: #22223A;
-  --gold:          #FFB30E;
-  --gold-dark:     #CC8800;
-  --gold-glow:     rgba(255, 179, 14, 0.14);
+  --bg:            #0A0A0A;
+  --bg-alt:        #111111;
+  --surface:       #181818;
+  --surface-hover: #222222;
+  --gold:          #C8911A;
+  --gold-dark:     #A07015;
+  --gold-glow:     rgba(200, 145, 26, 0.15);
   --text:          #F0F0F0;
   --text-muted:    #8B8FA8;
-  --border:        rgba(255, 179, 14, 0.12);
-  --shadow:        0 4px 32px rgba(0, 0, 0, 0.5);
-  --radius:        12px;
-  --radius-sm:     8px;
+  --border:        rgba(200, 145, 26, 0.15);
+  --shadow:        0 4px 32px rgba(0, 0, 0, 0.6);
+  --radius:        20px;
+  --radius-sm:     10px;
   --transition:    0.28s ease;
 }
 
@@ -26,12 +26,12 @@
   --bg-alt:        #FFFFFF;
   --surface:       #FFFFFF;
   --surface-hover: #EDE9DF;
-  --gold:          #A67000;
-  --gold-dark:     #7D5200;
-  --gold-glow:     rgba(166, 112, 0, 0.12);
+  --gold:          #8B6010;
+  --gold-dark:     #6A4800;
+  --gold-glow:     rgba(139, 96, 16, 0.12);
   --text:          #111111;
   --text-muted:    #555555;
-  --border:        rgba(166, 112, 0, 0.25);
+  --border:        rgba(139, 96, 16, 0.25);
   --shadow:        0 4px 24px rgba(0, 0, 0, 0.1);
 }
 
@@ -182,9 +182,16 @@ h1, h2, h3, h4, h5 {
   display: block;
   width: 44px;
   height: 3px;
-  background: var(--gold);
+  background: linear-gradient(90deg, var(--gold-dark), #E8A820, var(--gold-dark));
+  background-size: 200% auto;
   margin: 14px auto 0;
   border-radius: 2px;
+  animation: title-shine 2.8s linear infinite;
+}
+
+@keyframes title-shine {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
 }
 
 .section-sub {

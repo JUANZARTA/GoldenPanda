@@ -76,16 +76,35 @@
   font-size: 0.95rem;
   padding: 14px 30px;
   border-radius: 999px;
-  background: var(--gold);
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 60%, #E8A820 100%);
   color: #111;
-  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
   white-space: nowrap;
 }
 
+.btn-hero-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -80%;
+  width: 55%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
+  transform: skewX(-20deg);
+  animation: btn-shimmer 3.5s ease-in-out 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes btn-shimmer {
+  0%       { left: -80%; }
+  40%, 100% { left: 140%; }
+}
+
 .btn-hero-primary:hover {
-  background: var(--gold-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(255, 179, 14, 0.35);
+  box-shadow: 0 6px 28px rgba(200, 145, 26, 0.45);
 }
 
 .btn-hero-secondary {
@@ -140,10 +159,15 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.hero-logo     { animation: fadeInUp 0.75s ease 0.1s both; }
+.hero-logo     { animation: fadeInUp 0.75s ease 0.1s both, float 5s ease-in-out 1.2s infinite; }
 .hero-tagline  { animation: fadeInUp 0.75s ease 0.3s both; }
 .hero-ctas     { animation: fadeInUp 0.75s ease 0.5s both; }
 .hero-stats    { animation: fadeInUp 0.75s ease 0.7s both; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
 
 /* Hero stats bar */
 .hero-stats {
@@ -182,16 +206,32 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Hero diagonal cut */
+/* Hero bamboo pattern */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 58px,
+    rgba(200, 145, 26, 0.04) 58px,
+    rgba(200, 145, 26, 0.04) 60px
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Hero smooth wave divider */
 .hero::after {
   content: '';
   position: absolute;
   bottom: -1px;
-  left: 0;
-  right: 0;
-  height: 56px;
+  left: -10%;
+  width: 120%;
+  height: 70px;
   background: var(--bg);
-  clip-path: polygon(0 100%, 100% 20%, 100% 100%);
+  border-radius: 50% 50% 0 0 / 70px 70px 0 0;
   z-index: 3;
 }
 
@@ -243,17 +283,32 @@
 }
 
 .service-icon {
-  width: 50px;
-  height: 50px;
+  width: 54px;
+  height: 54px;
   background: var(--gold-glow);
-  border-radius: var(--radius-sm);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.35rem;
   color: var(--gold);
-  margin-bottom: 16px;
-  transition: background var(--transition);
+  margin-bottom: 18px;
+  transition: background var(--transition), transform var(--transition);
+  border: 1.5px solid var(--border);
+}
+
+.service-card:hover .service-icon {
+  background: rgba(200, 145, 26, 0.22);
+  transform: scale(1.1);
+}
+
+.featured-service .service-icon {
+  animation: icon-pulse 3s ease-in-out infinite;
+}
+
+@keyframes icon-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 145, 26, 0); }
+  50%       { box-shadow: 0 0 0 6px rgba(200, 145, 26, 0.18); }
 }
 
 .service-card h3 {
@@ -720,7 +775,12 @@ body.show-usd .p-usd { display: inline; }
 
 .plan-card.featured {
   border-color: var(--gold);
-  box-shadow: 0 0 0 1px var(--gold-glow), 0 8px 40px rgba(0,0,0,0.2);
+  animation: plan-glow 3s ease-in-out infinite;
+}
+
+@keyframes plan-glow {
+  0%, 100% { box-shadow: 0 0 0 1px var(--gold-glow), 0 8px 32px rgba(0,0,0,0.2); }
+  50%       { box-shadow: 0 0 0 3px rgba(200,145,26,0.22), 0 12px 40px rgba(200,145,26,0.1); }
 }
 
 .plan-badge {

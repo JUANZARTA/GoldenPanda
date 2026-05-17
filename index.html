@@ -6,13 +6,36 @@
   <title>Golden Panda — Software Developer</title>
   <meta name="description" content="Desarrollo de páginas web, aplicaciones web e invitaciones digitales. Soluciones digitales a medida para tu negocio.">
 
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://goldenpanda.dev/">
+
   <!-- Open Graph -->
   <meta property="og:title" content="Golden Panda — Software Developer">
   <meta property="og:description" content="Páginas web, apps e invitaciones digitales. Soluciones a medida para tu negocio.">
   <meta property="og:image" content="Image/Logo_Color.png">
+  <meta property="og:url" content="https://goldenpanda.dev/">
   <meta property="og:type" content="website">
 
+  <!-- PWA / Theme -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffcb59">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Golden Panda",
+    "description": "Desarrollo de páginas web, aplicaciones web e invitaciones digitales a medida",
+    "telephone": "+573128622945",
+    "email": "lordimpi26@gmail.com",
+    "address": { "@type": "PostalAddress", "addressCountry": "CO" },
+    "priceRange": "$"
+  }
+  </script>
+
   <link rel="icon" type="image/png" href="Image/Icono.png">
+  <link rel="preload" as="image" href="Image/Logo_Color.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -21,8 +44,19 @@
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/extras.css">
 </head>
 <body>
+
+  <!-- SKIP LINK -->
+  <a href="#servicios" class="skip-link">Saltar al contenido</a>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot"  id="cursor-dot"  aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- PAGE TRANSITION -->
+  <div class="page-transition" id="page-transition" aria-hidden="true"></div>
 
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
@@ -67,15 +101,19 @@
   <!-- HERO -->
   <section id="inicio" class="hero">
     <div class="hero-carousel">
-      <img src="Image/inicio/Imagen 1.jpeg" class="hero-img active" alt="">
-      <img src="Image/inicio/Imagen 2.jpeg" class="hero-img" alt="">
-      <img src="Image/inicio/Imagen 3.jpeg" class="hero-img" alt="">
-      <img src="Image/inicio/Imagen 4.jpeg" class="hero-img" alt="">
-      <img src="Image/inicio/Imagen 5.jpeg" class="hero-img" alt="">
-      <img src="Image/inicio/Imagen 6.jpeg" class="hero-img" alt="">
+      <img src="Image/inicio/Imagen 1.jpeg" class="hero-img active" alt="" loading="eager">
+      <img src="Image/inicio/Imagen 2.jpeg" class="hero-img" alt="" loading="lazy">
+      <img src="Image/inicio/Imagen 3.jpeg" class="hero-img" alt="" loading="lazy">
+      <img src="Image/inicio/Imagen 4.jpeg" class="hero-img" alt="" loading="lazy">
+      <img src="Image/inicio/Imagen 5.jpeg" class="hero-img" alt="" loading="lazy">
+      <img src="Image/inicio/Imagen 6.jpeg" class="hero-img" alt="" loading="lazy">
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
+      <div class="available-badge">
+        <span class="available-dot"></span>
+        Disponible para nuevos proyectos
+      </div>
       <img src="Image/Logo_Color.png" alt="Golden Panda" class="hero-logo">
       <p class="hero-tagline">Tu imaginación <span class="gold">no tiene límites</span></p>
       <div class="hero-ctas">
@@ -141,6 +179,65 @@
     </div>
   </section>
 
+  <!-- CÓMO TRABAJAMOS -->
+  <section id="proceso" class="section section-alt">
+    <div class="section-header">
+      <h2 class="section-title">Cómo trabajamos</h2>
+      <p class="section-sub">Un proceso claro, sin sorpresas, enfocado en tus resultados</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <span class="step-num">01</span>
+        <div class="step-icon"><i class="fas fa-comments"></i></div>
+        <h4>Consulta</h4>
+        <p>Nos contás tu idea y lo que necesitás. Sin costo, sin compromiso.</p>
+      </div>
+      <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="process-step reveal">
+        <span class="step-num">02</span>
+        <div class="step-icon"><i class="fas fa-palette"></i></div>
+        <h4>Diseño</h4>
+        <p>Creamos la propuesta visual. Vos aprobás antes de codear una línea.</p>
+      </div>
+      <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="process-step reveal">
+        <span class="step-num">03</span>
+        <div class="step-icon"><i class="fas fa-code"></i></div>
+        <h4>Desarrollo</h4>
+        <p>Programamos con las mejores tecnologías. Actualizaciones constantes.</p>
+      </div>
+      <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="process-step reveal">
+        <span class="step-num">04</span>
+        <div class="step-icon"><i class="fas fa-rocket"></i></div>
+        <h4>Entrega</h4>
+        <p>Tu proyecto listo, probado y funcionando. Soporte post-entrega incluido.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTADÍSTICAS -->
+  <section id="stats" class="section stats-section">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <strong class="stat-num" data-target="10" data-suffix="+">0</strong>
+        <span class="stat-label">Proyectos entregados</span>
+      </div>
+      <div class="stat-item reveal">
+        <strong class="stat-num" data-target="8" data-suffix="">0</strong>
+        <span class="stat-label">Clientes satisfechos</span>
+      </div>
+      <div class="stat-item reveal">
+        <strong class="stat-num" data-target="4" data-suffix="">0</strong>
+        <span class="stat-label">Tipos de servicio</span>
+      </div>
+      <div class="stat-item reveal">
+        <strong class="stat-num" data-target="2" data-suffix="+">0</strong>
+        <span class="stat-label">Años de experiencia</span>
+      </div>
+    </div>
+  </section>
+
   <!-- MODAL -->
   <div class="modal-overlay" id="modal-overlay">
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
@@ -163,9 +260,15 @@
       <h2 class="section-title">Portafolio</h2>
       <p class="section-sub">Proyectos que hablan por sí solos</p>
     </div>
+    <div class="portfolio-filters">
+      <button class="pf-btn active" data-filter="all">Todos</button>
+      <button class="pf-btn" data-filter="web">Sitio Web</button>
+      <button class="pf-btn" data-filter="app">App Web</button>
+      <button class="pf-btn" data-filter="invitacion">Invitación Digital</button>
+    </div>
     <div class="portfolio-grid">
 
-      <div class="portfolio-card reveal">
+      <div class="portfolio-card reveal" data-category="app">
         <div class="portfolio-thumb" style="--card-color: #1a5c3a;"><i class="fas fa-cash-register"></i></div>
         <div class="portfolio-info">
           <h4>Control Cash</h4>
@@ -175,7 +278,7 @@
         </div>
       </div>
 
-      <div class="portfolio-card reveal">
+      <div class="portfolio-card reveal" data-category="app">
         <div class="portfolio-thumb" style="--card-color: #1a3f6b;"><i class="fas fa-tasks"></i></div>
         <div class="portfolio-info">
           <h4>Mis Deberes</h4>
@@ -185,7 +288,7 @@
         </div>
       </div>
 
-      <div class="portfolio-card reveal">
+      <div class="portfolio-card reveal" data-category="app">
         <div class="portfolio-thumb" style="--card-color: #3d1a6b;"><i class="fas fa-calendar-alt"></i></div>
         <div class="portfolio-info">
           <h4>Agenda Co</h4>
@@ -195,7 +298,7 @@
         </div>
       </div>
 
-      <div class="portfolio-card reveal">
+      <div class="portfolio-card reveal" data-category="web">
         <div class="portfolio-thumb" style="--card-color: #6b3010;"><i class="fas fa-utensils"></i></div>
         <div class="portfolio-info">
           <h4>Resto Bar</h4>
@@ -205,7 +308,7 @@
         </div>
       </div>
 
-      <div class="portfolio-card reveal">
+      <div class="portfolio-card reveal" data-category="invitacion">
         <div class="portfolio-thumb" style="--card-color: #6b1a3a;"><i class="fas fa-heart"></i></div>
         <div class="portfolio-info">
           <h4>Web Invitación 15</h4>
@@ -215,7 +318,7 @@
         </div>
       </div>
 
-      <div class="portfolio-card reveal">
+      <div class="portfolio-card reveal" data-category="invitacion">
         <div class="portfolio-thumb" style="--card-color: #1a4d6b;"><i class="fas fa-ring"></i></div>
         <div class="portfolio-info">
           <h4>Web Invitación Bodas</h4>
@@ -225,7 +328,7 @@
         </div>
       </div>
 
-      <div class="portfolio-card reveal">
+      <div class="portfolio-card reveal" data-category="web">
         <div class="portfolio-thumb" style="--card-color: #3d6b1a;"><i class="fas fa-user-circle"></i></div>
         <div class="portfolio-info">
           <h4>Web Info Personal</h4>
@@ -235,7 +338,7 @@
         </div>
       </div>
 
-      <div class="portfolio-card reveal">
+      <div class="portfolio-card reveal" data-category="app">
         <div class="portfolio-thumb" style="--card-color: #28196b;"><i class="fas fa-building"></i></div>
         <div class="portfolio-info">
           <h4>Contab</h4>
@@ -245,6 +348,83 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section id="testimonios" class="section">
+    <div class="section-header">
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <p class="section-sub">Proyectos reales, resultados reales</p>
+    </div>
+    <div class="testimonials-wrap">
+      <div class="testimonials-track" id="testimonials-track">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"El sitio quedó exactamente como lo imaginábamos. Rápido, elegante y funciona perfecto en el celular."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MR</div>
+            <div>
+              <strong>María R.</strong>
+              <span>Sitio web corporativo</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"La invitación digital de mi quinceañera fue la más original de todas. Mis invitados quedaron fascinados."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">VS</div>
+            <div>
+              <strong>Valentina S.</strong>
+              <span>Invitación de 15</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Excelente trabajo y muy buen trato. El sistema mejoró muchísimo nuestros procesos internos."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AC</div>
+            <div>
+              <strong>Andrés C.</strong>
+              <span>App web empresarial</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Cumplieron los tiempos, el diseño es increíble y el precio muy justo. Los recomiendo sin dudarlo."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">LC</div>
+            <div>
+              <strong>Laura C.</strong>
+              <span>Invitación de boda</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonials-controls">
+      <button class="t-prev" id="t-prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+      <div class="testimonials-dots" id="testimonials-dots"></div>
+      <button class="t-next" id="t-next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- STACK TECNOLÓGICO -->
+  <section id="stack" class="section section-alt">
+    <div class="section-header">
+      <h2 class="section-title">Tecnologías que usamos</h2>
+      <p class="section-sub">Herramientas actuales para soluciones modernas</p>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-item reveal"><i class="fab fa-html5"></i><span>HTML5</span></div>
+      <div class="stack-item reveal"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+      <div class="stack-item reveal"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
+      <div class="stack-item reveal"><i class="fab fa-react"></i><span>React</span></div>
+      <div class="stack-item reveal"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+      <div class="stack-item reveal"><i class="fab fa-git-alt"></i><span>Git</span></div>
+      <div class="stack-item reveal"><i class="fas fa-fire"></i><span>Firebase</span></div>
+      <div class="stack-item reveal"><i class="fas fa-database"></i><span>MySQL</span></div>
+      <div class="stack-item reveal"><i class="fab fa-figma"></i><span>Figma</span></div>
+      <div class="stack-item reveal"><i class="fab fa-java"></i><span>Java</span></div>
     </div>
   </section>
 
@@ -492,6 +672,70 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="section-header">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <p class="section-sub">Todo lo que necesitás saber antes de empezar</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Cuánto tiempo tarda en entregarse un proyecto?</span>
+          <i class="fas fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Depende del tipo. Un landing básico: 7 días. Un sitio estándar: 15 días. Una app web completa: entre 20 y 60 días. Los tiempos exactos están detallados en cada plan de cotización.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿El hosting y el dominio están incluidos?</span>
+          <i class="fas fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>No están incluidos por defecto, pero te asesoramos para contratarlos. Hay opciones gratuitas (Netlify, Vercel) y de pago según tu necesidad. También podemos gestionarlo por vos si querés.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Puedo pedir cambios después de la entrega?</span>
+          <i class="fas fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Sí. Los planes Premium incluyen 1 mes de mantenimiento. Para los demás, ofrecemos actualizaciones y mejoras a precios muy accesibles. Nunca te dejamos sin soporte.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Cómo es el proceso de pago?</span>
+          <i class="fas fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Trabajamos con 50% al inicio del proyecto y 50% al finalizar. Aceptamos transferencia bancaria, Nequi y otros medios de pago digitales.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Trabajan con clientes fuera de Colombia?</span>
+          <i class="fas fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Sí, trabajamos con clientes de toda Latinoamérica. Los precios en USD aplican para clientes internacionales y el pago se coordina por plataformas digitales internacionales.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿El sitio va a funcionar bien en celulares?</span>
+          <i class="fas fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Siempre. Todos nuestros proyectos son completamente responsivos y se prueban en celular, tablet y computadora antes de la entrega.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACTO -->
   <section id="contacto" class="section section-alt">
     <div class="deco-orbs" aria-hidden="true">
@@ -528,8 +772,8 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="deco-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    <img src="Image/Logo_Color.png" alt="Golden Panda" class="footer-logo footer-logo-dark">
-    <img src="Image/LOGO (1).png"   alt="Golden Panda" class="footer-logo footer-logo-light">
+    <img src="Image/Logo_Color.png" alt="Golden Panda" class="footer-logo footer-logo-dark" loading="lazy">
+    <img src="Image/LOGO (1).png"   alt="Golden Panda" class="footer-logo footer-logo-light" loading="lazy">
     <nav class="footer-links">
       <a href="#servicios">Servicios</a>
       <a href="#portafolio">Portafolio</a>
@@ -767,6 +1011,36 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- LIGHTBOX PORTAFOLIO -->
+  <div class="lightbox-overlay" id="lightbox-overlay" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <div class="lightbox">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+      <div class="lightbox-thumb-area" id="lightbox-thumb"></div>
+      <div class="lightbox-body">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-desc"></p>
+        <div class="lightbox-tags" id="lightbox-tech"></div>
+        <a href="#" class="lightbox-btn" id="lightbox-link" target="_blank" rel="noopener">
+          Ver proyecto <i class="fas fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXIT POPUP -->
+  <div class="exit-popup-overlay" id="exit-popup" role="dialog" aria-modal="true">
+    <div class="exit-popup">
+      <button class="exit-popup-x" id="exit-popup-close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+      <div class="exit-popup-icon"><i class="fab fa-whatsapp"></i></div>
+      <h3>¡Espera un momento!</h3>
+      <p>Antes de irte, podemos charlar 5 minutos y ver si hay algo que podamos hacer por vos.</p>
+      <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20sus%20servicios" target="_blank" class="btn-plan">
+        Hablemos ahora <i class="fab fa-whatsapp"></i>
+      </a>
+      <button class="exit-dismiss" id="exit-dismiss">No gracias, seguiré mirando</button>
     </div>
   </div>
 

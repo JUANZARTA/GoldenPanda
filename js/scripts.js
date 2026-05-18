@@ -423,4 +423,163 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('pageshow', () => pageTrans?.classList.remove('fade-out'));
 
+  // ============================================================
+  // SCROLL PROGRESS BAR
+  // ============================================================
+  const scrollBar = document.getElementById('scroll-progress');
+  if (scrollBar) {
+    const updateProgress = () => {
+      const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+      scrollBar.style.width = (scrollTop / (scrollHeight - clientHeight) * 100) + '%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+  }
+
+  // ============================================================
+  // BACK TO TOP
+  // ============================================================
+  const backTop = document.getElementById('back-to-top');
+  if (backTop) {
+    window.addEventListener('scroll', () => {
+      backTop.classList.toggle('visible', window.scrollY > 420);
+    }, { passive: true });
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+
+  // ============================================================
+  // STICKY CTA
+  // ============================================================
+  const stickyCta  = document.getElementById('sticky-cta');
+  const stickyClose = document.getElementById('sticky-cta-close');
+  let ctaDismissed  = false;
+
+  if (stickyCta) {
+    const heroH = () => document.getElementById('inicio')?.offsetHeight || 500;
+    window.addEventListener('scroll', () => {
+      if (ctaDismissed) return;
+      stickyCta.classList.toggle('visible', window.scrollY > heroH());
+      stickyCta.setAttribute('aria-hidden', String(!stickyCta.classList.contains('visible')));
+    }, { passive: true });
+    stickyClose?.addEventListener('click', () => {
+      ctaDismissed = true;
+      stickyCta.classList.remove('visible');
+      stickyCta.setAttribute('aria-hidden', 'true');
+    });
+  }
+
+  // ============================================================
+  // OFFER BANNER
+  // ============================================================
+  const offerBanner = document.getElementById('offer-banner');
+  if (offerBanner) {
+    if (sessionStorage.getItem('gp-offer')) offerBanner.classList.add('dismissed');
+    document.getElementById('offer-banner-close')?.addEventListener('click', () => {
+      offerBanner.classList.add('dismissed');
+      sessionStorage.setItem('gp-offer', '1');
+    });
+  }
+
+  // ============================================================
+  // PARALLAX HERO
+  // ============================================================
+  const heroCarousel = document.querySelector('.hero-carousel');
+  if (heroCarousel) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < window.innerHeight) {
+        heroCarousel.style.transform = `translateY(${window.scrollY * 0.32}px)`;
+      }
+    }, { passive: true });
+  }
+
+  // ============================================================
+  // TYPEWRITER — hero tagline
+  // ============================================================
+  const tagline = document.querySelector('.hero-tagline');
+  if (tagline && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const parts = [
+      { tag: null,   text: 'Tu imaginación ' },
+      { tag: 'gold', text: 'no tiene límites' },
+    ];
+    tagline.innerHTML = '';
+    const cursor = Object.assign(document.createElement('span'), { className: 'tw-cursor' });
+    tagline.appendChild(cursor);
+
+    let pi = 0, ci = 0, span = null;
+
+    const typeId = setInterval(() => {
+      if (pi >= parts.length) {
+        clearInterval(typeId);
+        setTimeout(() => cursor.remove(), 2200);
+        return;
+      }
+      const part = parts[pi];
+      if (!span && part.tag) {
+        span = Object.assign(document.createElement('span'), { className: part.tag });
+        tagline.insertBefore(span, cursor);
+      }
+      const node = document.createTextNode(part.text[ci]);
+      if (span) span.appendChild(node);
+      else tagline.insertBefore(node, cursor);
+      ci++;
+      if (ci >= part.text.length) { pi++; ci = 0; span = null; }
+    }, 58);
+  }
+
+  // ============================================================
+  // FOCUS TRAP — all modals
+  // ============================================================
+  function makeTrap(overlayEl) {
+    if (!overlayEl) return;
+    overlayEl.addEventListener('keydown', e => {
+      if (e.key !== 'Tab') return;
+      const focusable = [...overlayEl.querySelectorAll(
+        'a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])'
+      )];
+      if (!focusable.length) return;
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+      else            { if (document.activeElement === last)  { e.preventDefault(); first.focus(); } }
+    });
+  }
+
+  makeTrap(document.getElementById('modal-overlay'));
+  makeTrap(document.getElementById('modal-extras-overlay'));
+  makeTrap(document.getElementById('lightbox-overlay'));
+  makeTrap(document.getElementById('exit-popup'));
+
+  // ============================================================
+  // SHARE BUTTONS
+  // ============================================================
+  document.getElementById('share-wa')?.addEventListener('click', () => {
+    window.open(
+      `https://wa.me/?text=${encodeURIComponent('Mirá este sitio web: ' + location.origin)}`,
+      '_blank'
+    );
+  });
+
+  const shareCopy = document.getElementById('share-copy');
+  shareCopy?.addEventListener('click', function () {
+    navigator.clipboard?.writeText(location.origin).then(() => {
+      this.classList.add('copied');
+      const icon = this.querySelector('i'), label = this.querySelector('span');
+      if (icon)  icon.className  = 'fas fa-check';
+      if (label) label.textContent = '¡Copiado!';
+      setTimeout(() => {
+        this.classList.remove('copied');
+        if (icon)  icon.className  = 'fas fa-link';
+        if (label) label.textContent = 'Copiar link';
+      }, 2400);
+    });
+  });
+
+  // ============================================================
+  // SERVICE CARD FLIP
+  // ============================================================
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('click', e => {
+      if (e.target.closest('.service-wa')) return;
+      card.classList.toggle('flipped');
+    });
+  });
+
 });

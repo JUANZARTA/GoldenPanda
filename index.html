@@ -36,6 +36,8 @@
 
   <link rel="icon" type="image/png" href="Image/Icono.png">
   <link rel="preload" as="image" href="Image/Logo_Color.png">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -45,11 +47,39 @@
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/extras.css">
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"¿Cuánto tiempo tarda un proyecto?","acceptedAnswer":{"@type":"Answer","text":"Un landing básico: 7 días. Sitio estándar: 15 días. App web completa: entre 20 y 60 días."}},
+      {"@type":"Question","name":"¿El hosting y dominio están incluidos?","acceptedAnswer":{"@type":"Answer","text":"No están incluidos por defecto, pero asesoramos en la contratación. Hay opciones gratuitas como Netlify o Vercel."}},
+      {"@type":"Question","name":"¿Puedo pedir cambios después de la entrega?","acceptedAnswer":{"@type":"Answer","text":"Sí. Los planes Premium incluyen 1 mes de mantenimiento. Para los demás, ofrecemos actualizaciones a precios accesibles."}},
+      {"@type":"Question","name":"¿Trabajan con clientes fuera de Colombia?","acceptedAnswer":{"@type":"Answer","text":"Sí, trabajamos con clientes de toda Latinoamérica. Los precios en USD aplican para clientes internacionales."}}
+    ]
+  }
+  </script>
+
+  <!-- SW registration -->
+  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(() => {});</script>
+
+  <script src="js/scripts.js" defer></script>
 </head>
 <body>
 
+  <!-- OFFER BANNER -->
+  <div class="offer-banner" id="offer-banner">
+    🎉 Descuento especial este mes en invitaciones digitales · <a href="#cotizar">Ver planes</a>
+    <button class="offer-banner-close" id="offer-banner-close" aria-label="Cerrar">✕</button>
+  </div>
+
   <!-- SKIP LINK -->
   <a href="#servicios" class="skip-link">Saltar al contenido</a>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="scroll-progress" aria-hidden="true"></div>
 
   <!-- CUSTOM CURSOR -->
   <div class="cursor-dot"  id="cursor-dot"  aria-hidden="true"></div>
@@ -120,9 +150,12 @@
         <a href="#cotizar" class="btn-hero-primary">Cotizar proyecto</a>
         <a href="#portafolio" class="btn-hero-secondary">Ver portafolio</a>
       </div>
+      <p class="hero-visitors">
+        <i class="fas fa-eye"></i> Más de <strong>500 personas</strong> lo descubrieron este mes
+      </p>
       <div class="hero-stats">
         <div class="hero-stat">
-          <strong>10+</strong>
+          <strong>100+</strong>
           <span>Proyectos web</span>
         </div>
         <div class="hero-stat-sep"></div>
@@ -145,32 +178,98 @@
 
   <!-- SERVICIOS -->
   <section id="servicios" class="section">
+    <div class="deco-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <div class="section-header">
       <h2 class="section-title">Servicios</h2>
       <p class="section-sub">Soluciones digitales a medida para tu negocio · Respuesta en menos de 24 horas</p>
     </div>
     <div class="services-grid">
+
       <div class="service-card featured-service reveal">
         <span class="service-badge">Más solicitado</span>
-        <div class="service-icon"><i class="fas fa-globe"></i></div>
-        <h3>Páginas Web</h3>
-        <p>Diseño y desarrollo de sitios web modernos, responsivos y optimizados.</p>
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="service-icon"><i class="fas fa-globe"></i></div>
+            <h3>Páginas Web</h3>
+            <p>Diseño y desarrollo de sitios web modernos, responsivos y optimizados.</p>
+            <span class="card-flip-hint"><i class="fas fa-arrows-rotate"></i> Ver detalles</span>
+          </div>
+          <div class="card-back">
+            <p class="card-back-title"><i class="fas fa-globe"></i> Páginas Web</p>
+            <ul class="card-back-features">
+              <li><i class="fas fa-check"></i>Landing pages, corporativos y e-commerce</li>
+              <li><i class="fas fa-check"></i>SEO técnico + diseño responsivo</li>
+              <li><i class="fas fa-check"></i>Animaciones y efectos a medida</li>
+              <li><i class="fas fa-check"></i>Código fuente incluido en la entrega</li>
+            </ul>
+            <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20cotizar%20una%20P%C3%A1gina%20Web" target="_blank" class="service-wa"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </div>
+        </div>
       </div>
+
       <div class="service-card reveal">
-        <div class="service-icon"><i class="fas fa-heart"></i></div>
-        <h3>Invitaciones de 15</h3>
-        <p>Tarjetas digitales únicas y elegantes para quinceañeras.</p>
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="service-icon"><i class="fas fa-heart"></i></div>
+            <h3>Invitaciones de 15</h3>
+            <p>Tarjetas digitales únicas y elegantes para quinceañeras.</p>
+            <span class="card-flip-hint"><i class="fas fa-arrows-rotate"></i> Ver detalles</span>
+          </div>
+          <div class="card-back">
+            <p class="card-back-title"><i class="fas fa-heart"></i> Invitaciones de 15</p>
+            <ul class="card-back-features">
+              <li><i class="fas fa-check"></i>Diseño personalizado con tus colores</li>
+              <li><i class="fas fa-check"></i>Cuenta regresiva + galería de fotos</li>
+              <li><i class="fas fa-check"></i>Música de fondo a elección</li>
+              <li><i class="fas fa-check"></i>RSVP de confirmación incluido</li>
+            </ul>
+            <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20cotizar%20una%20Invitaci%C3%B3n%20de%2015" target="_blank" class="service-wa"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </div>
+        </div>
       </div>
+
       <div class="service-card reveal">
-        <div class="service-icon"><i class="fas fa-ring"></i></div>
-        <h3>Invitaciones de Boda</h3>
-        <p>Experiencias digitales memorables para el día más especial.</p>
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="service-icon"><i class="fas fa-ring"></i></div>
+            <h3>Invitaciones de Boda</h3>
+            <p>Experiencias digitales memorables para el día más especial.</p>
+            <span class="card-flip-hint"><i class="fas fa-arrows-rotate"></i> Ver detalles</span>
+          </div>
+          <div class="card-back">
+            <p class="card-back-title"><i class="fas fa-ring"></i> Invitaciones de Boda</p>
+            <ul class="card-back-features">
+              <li><i class="fas fa-check"></i>Diseño elegante y exclusivo</li>
+              <li><i class="fas fa-check"></i>Cuenta regresiva + galería animada</li>
+              <li><i class="fas fa-check"></i>Mapa Google Maps integrado</li>
+              <li><i class="fas fa-check"></i>RSVP y confirmación de asistencia</li>
+            </ul>
+            <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20cotizar%20una%20Invitaci%C3%B3n%20de%20Boda" target="_blank" class="service-wa"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </div>
+        </div>
       </div>
+
       <div class="service-card reveal">
-        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-        <h3>Aplicaciones Web</h3>
-        <p>Desarrollo de aplicaciones web a medida, robustas y escalables.</p>
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3>Aplicaciones Web</h3>
+            <p>Desarrollo de aplicaciones web a medida, robustas y escalables.</p>
+            <span class="card-flip-hint"><i class="fas fa-arrows-rotate"></i> Ver detalles</span>
+          </div>
+          <div class="card-back">
+            <p class="card-back-title"><i class="fas fa-laptop-code"></i> Aplicaciones Web</p>
+            <ul class="card-back-features">
+              <li><i class="fas fa-check"></i>Login, roles y panel de usuario</li>
+              <li><i class="fas fa-check"></i>Dashboard + estadísticas en tiempo real</li>
+              <li><i class="fas fa-check"></i>Módulos CRUD y reportes</li>
+              <li><i class="fas fa-check"></i>Firebase o MySQL según el proyecto</li>
+            </ul>
+            <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20cotizar%20una%20Aplicaci%C3%B3n%20Web" target="_blank" class="service-wa"><i class="fab fa-whatsapp"></i> Consultar</a>
+          </div>
+        </div>
       </div>
+
     </div>
     <div class="services-more">
       <button class="btn-more" id="btn-more-services">
@@ -181,6 +280,7 @@
 
   <!-- CÓMO TRABAJAMOS -->
   <section id="proceso" class="section section-alt">
+    <div class="deco-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <div class="section-header">
       <h2 class="section-title">Cómo trabajamos</h2>
       <p class="section-sub">Un proceso claro, sin sorpresas, enfocado en tus resultados</p>
@@ -218,13 +318,14 @@
 
   <!-- ESTADÍSTICAS -->
   <section id="stats" class="section stats-section">
+    <div class="deco-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <div class="stats-grid">
       <div class="stat-item reveal">
-        <strong class="stat-num" data-target="10" data-suffix="+">0</strong>
+        <strong class="stat-num" data-target="100" data-suffix="+">0</strong>
         <span class="stat-label">Proyectos entregados</span>
       </div>
       <div class="stat-item reveal">
-        <strong class="stat-num" data-target="8" data-suffix="">0</strong>
+        <strong class="stat-num" data-target="100" data-suffix="+">0</strong>
         <span class="stat-label">Clientes satisfechos</span>
       </div>
       <div class="stat-item reveal">
@@ -232,7 +333,7 @@
         <span class="stat-label">Tipos de servicio</span>
       </div>
       <div class="stat-item reveal">
-        <strong class="stat-num" data-target="2" data-suffix="+">0</strong>
+        <strong class="stat-num" data-target="4" data-suffix="+">0</strong>
         <span class="stat-label">Años de experiencia</span>
       </div>
     </div>
@@ -353,12 +454,13 @@
 
   <!-- TESTIMONIOS -->
   <section id="testimonios" class="section">
+    <div class="deco-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <div class="section-header">
       <h2 class="section-title">Lo que dicen nuestros clientes</h2>
       <p class="section-sub">Proyectos reales, resultados reales</p>
     </div>
     <div class="testimonials-wrap">
-      <div class="testimonials-track" id="testimonials-track">
+      <div class="testimonials-track" id="testimonials-track" aria-live="polite" aria-atomic="true">
         <div class="testimonial-card">
           <p class="testimonial-text">"El sitio quedó exactamente como lo imaginábamos. Rápido, elegante y funciona perfecto en el celular."</p>
           <div class="testimonial-author">
@@ -410,6 +512,7 @@
 
   <!-- STACK TECNOLÓGICO -->
   <section id="stack" class="section section-alt">
+    <div class="deco-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <div class="section-header">
       <h2 class="section-title">Tecnologías que usamos</h2>
       <p class="section-sub">Herramientas actuales para soluciones modernas</p>
@@ -430,6 +533,7 @@
 
   <!-- COTIZAR -->
   <section id="cotizar" class="section">
+    <div class="deco-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <div class="section-header">
       <h2 class="section-title">Cotiza tu proyecto</h2>
       <p class="section-sub">Precios transparentes · Consulta sin compromiso · Ajustamos a tu presupuesto</p>
@@ -674,6 +778,7 @@
 
   <!-- FAQ -->
   <section id="faq" class="section">
+    <div class="deco-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <div class="section-header">
       <h2 class="section-title">Preguntas frecuentes</h2>
       <p class="section-sub">Todo lo que necesitás saber antes de empezar</p>
@@ -738,11 +843,7 @@
 
   <!-- CONTACTO -->
   <section id="contacto" class="section section-alt">
-    <div class="deco-orbs" aria-hidden="true">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-    </div>
+    <div class="deco-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <div class="section-header">
       <h2 class="section-title">Contacto</h2>
       <p class="section-sub">¿Tenés un proyecto en mente? Hablemos.</p>
@@ -781,6 +882,17 @@
       <a href="html/nosotros.html">Nosotros</a>
       <a href="#contacto">Contacto</a>
     </nav>
+    <div class="share-section">
+      <span class="share-label">Compartir</span>
+      <div class="share-btns">
+        <button class="share-btn" id="share-wa" aria-label="Compartir por WhatsApp">
+          <i class="fab fa-whatsapp"></i> <span>WhatsApp</span>
+        </button>
+        <button class="share-btn" id="share-copy" aria-label="Copiar enlace">
+          <i class="fas fa-link"></i> <span>Copiar link</span>
+        </button>
+      </div>
+    </div>
     <p class="footer-credits">© 2025 <span class="gold">Juan Camilo Zarta</span> — Software Developer</p>
   </footer>
 
@@ -1044,11 +1156,28 @@
     </div>
   </div>
 
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="back-to-top" aria-label="Volver arriba">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- STICKY CTA -->
+  <div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+    <p class="sticky-cta-text"><strong>¿Tenés un proyecto en mente?</strong> Respondemos en menos de 24h.</p>
+    <div class="sticky-cta-actions">
+      <a href="https://wa.me/573128622945?text=Hola%2C%20me%20interesa%20cotizar%20un%20proyecto" target="_blank" class="sticky-cta-btn">
+        <i class="fab fa-whatsapp"></i> Cotizar
+      </a>
+      <button class="sticky-cta-close" id="sticky-cta-close" aria-label="Cerrar">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+
   <!-- FLOAT WHATSAPP -->
   <a href="https://wa.me/573128622945" target="_blank" class="float-wa" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <script src="js/scripts.js"></script>
 </body>
 </html>

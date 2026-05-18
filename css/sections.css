@@ -1063,9 +1063,8 @@ body.show-usd .p-usd { display: inline; }
    DECORACIONES DE SECCIONES
    ============================================================ */
 
-#portafolio, #contacto { position: relative; }
+.section, .footer { position: relative; }
 
-.deco-orbs,
 .deco-particles {
   position: absolute;
   inset: 0;
@@ -1075,59 +1074,13 @@ body.show-usd .p-usd { display: inline; }
 }
 
 /* Levanta el contenido sobre las decoraciones */
-#portafolio > *:not(.deco-particles),
-#contacto > *:not(.deco-orbs),
+.section > *:not(.deco-particles),
 .footer > *:not(.deco-particles) {
   position: relative;
   z-index: 1;
 }
 
-/* -- 1. ORBS — Servicios ---------------------------------------- */
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(88px);
-  will-change: transform;
-}
-.orb-1 {
-  width: 480px; height: 480px;
-  background: var(--gold-dark);
-  opacity: 0.09;
-  top: -160px; left: -120px;
-  animation: orb-drift-1 14s ease-in-out infinite;
-}
-.orb-2 {
-  width: 360px; height: 360px;
-  background: var(--gold);
-  opacity: 0.07;
-  bottom: -90px; right: -70px;
-  animation: orb-drift-2 18s ease-in-out infinite;
-}
-.orb-3 {
-  width: 240px; height: 240px;
-  background: var(--gold-light);
-  opacity: 0.06;
-  top: 38%; left: 44%;
-  animation: orb-drift-3 11s ease-in-out infinite;
-}
-
-@keyframes orb-drift-1 {
-  0%, 100% { transform: translate(0, 0)       scale(1);    }
-  33%       { transform: translate(70px, 50px)  scale(1.1);  }
-  66%       { transform: translate(-30px, 80px) scale(0.95); }
-}
-@keyframes orb-drift-2 {
-  0%, 100% { transform: translate(0, 0)          scale(1);    }
-  40%       { transform: translate(-90px, -70px)  scale(1.12); }
-  80%       { transform: translate(-35px, -25px)  scale(0.92); }
-}
-@keyframes orb-drift-3 {
-  0%, 100% { transform: translate(0, 0)         scale(1);    border-radius: 50%;           }
-  33%       { transform: translate(50px, -40px)  scale(1.15); border-radius: 42% 58% 55% 45%; }
-  66%       { transform: translate(-25px, 55px)  scale(0.88); border-radius: 60% 40% 45% 55%; }
-}
-
-/* -- 2. PARTICLES — Portafolio ---------------------------------- */
+/* -- PARTICLES — Todas las secciones ---------------------------------- */
 .deco-particles i {
   position: absolute;
   display: block;

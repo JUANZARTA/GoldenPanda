@@ -1,4 +1,120 @@
 /* ============================================================
+   SERVICE CARD — REVEAL (click para ver detalles)
+   ============================================================ */
+.service-card {
+  cursor: pointer;
+  min-height: 260px;
+}
+
+.card-inner {
+  position: relative;
+  height: 100%;
+}
+
+/* Cara delantera */
+.card-front {
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+/* Cara trasera — oculta por defecto */
+.card-back {
+  position: absolute;
+  inset: -32px -28px;       /* compensa el padding del service-card */
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.97) translateY(6px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+  background: linear-gradient(160deg, var(--surface) 55%, rgba(var(--gold-dark-rgb), 0.1) 100%);
+  border: 1px solid rgba(var(--gold-rgb), 0.5);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+}
+
+/* Estado: flipped */
+.service-card.flipped .card-front {
+  opacity: 0;
+  transform: scale(0.96) translateY(-4px);
+  pointer-events: none;
+}
+
+.service-card.flipped .card-back {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1) translateY(0);
+}
+
+/* Contenido de la cara trasera */
+.card-back-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-back-features {
+  list-style: none;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.card-back-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.card-back-features li i {
+  color: var(--gold);
+  font-size: 0.68rem;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Hint siempre visible en el frente */
+.card-flip-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 14px;
+  font-size: 0.73rem;
+  font-weight: 500;
+  color: var(--gold);
+  opacity: 0.6;
+  transition: opacity var(--transition);
+  user-select: none;
+  animation: hint-pulse 3s ease-in-out 1.5s infinite;
+}
+
+.service-card:hover .card-flip-hint {
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes hint-pulse {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1;   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-front, .card-back { transition: none; }
+  .card-flip-hint { animation: none; }
+}
+
+/* ============================================================
    SKIP LINK
    ============================================================ */
 .skip-link {
@@ -664,6 +780,247 @@
 }
 
 /* ============================================================
+   SCROLL PROGRESS BAR
+   ============================================================ */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
+  z-index: 9999;
+  pointer-events: none;
+  transition: width 0.08s linear;
+}
+
+/* ============================================================
+   BACK TO TOP
+   ============================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 92px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 0.88rem;
+  cursor: pointer;
+  z-index: 550;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity var(--transition), transform var(--transition),
+              background var(--transition), box-shadow var(--transition);
+  pointer-events: none;
+}
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+.back-to-top:hover {
+  background: var(--gold);
+  color: var(--on-gold);
+  box-shadow: 0 4px 16px rgba(var(--gold-rgb), 0.35);
+}
+
+/* ============================================================
+   STICKY CTA BAR
+   ============================================================ */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 11px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  z-index: 400;
+  transform: translateY(100%);
+  transition: transform 0.32s ease, background var(--transition), border-color var(--transition);
+  backdrop-filter: blur(12px);
+}
+.sticky-cta.visible { transform: translateY(0); }
+.sticky-cta-text {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+.sticky-cta-text strong { color: var(--text); }
+.sticky-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.sticky-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: var(--on-gold);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+.sticky-cta-btn:hover { opacity: 0.88; }
+.sticky-cta-close {
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-family: inherit;
+  transition: color var(--transition), background var(--transition);
+  flex-shrink: 0;
+}
+.sticky-cta-close:hover { color: var(--text); background: var(--surface-hover); }
+@media (max-width: 500px) {
+  .sticky-cta { padding: 10px 16px; }
+  .sticky-cta-text { font-size: 0.78rem; }
+  .sticky-cta-btn  { padding: 7px 14px; }
+}
+
+/* ============================================================
+   OFFER BANNER
+   ============================================================ */
+.offer-banner {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+  color: var(--on-gold);
+  text-align: center;
+  padding: 9px 48px 9px 24px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 950;
+  line-height: 1.4;
+}
+.offer-banner a { color: var(--on-gold); text-decoration: underline; }
+.offer-banner-close {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--on-gold);
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-family: inherit;
+  opacity: 0.7;
+  padding: 4px 8px;
+  transition: opacity 0.2s;
+}
+.offer-banner-close:hover { opacity: 1; }
+.offer-banner.dismissed { display: none; }
+
+/* ============================================================
+   SHARE BUTTONS
+   ============================================================ */
+.share-section {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.share-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.share-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: inherit;
+  transition: all var(--transition);
+}
+.share-btn:hover { border-color: var(--gold); color: var(--gold); }
+.share-btn.copied { border-color: #4ade80; color: #4ade80; }
+
+/* ============================================================
+   SERVICE WA LINKS
+   ============================================================ */
+.service-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--wa);
+  font-weight: 600;
+  margin-top: 14px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--wa-rgb), 0.3);
+  transition: all var(--transition);
+}
+.service-wa:hover {
+  background: rgba(var(--wa-rgb), 0.1);
+  border-color: var(--wa);
+}
+
+/* ============================================================
+   HERO VISITORS COUNTER
+   ============================================================ */
+.hero-visitors {
+  font-size: 0.77rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 20px;
+  letter-spacing: 0.2px;
+}
+.hero-visitors strong { color: var(--gold); }
+
+/* ============================================================
+   TYPEWRITER CURSOR
+   ============================================================ */
+.tw-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 0.9em;
+  background: var(--gold);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: tw-blink 0.82s step-end infinite;
+}
+@keyframes tw-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ============================================================
    PREFERS REDUCED MOTION
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
@@ -673,5 +1030,5 @@
     transition-duration: 0.01ms !important;
   }
   .reveal { opacity: 1 !important; transform: none !important; }
-  .cursor-dot, .cursor-ring { display: none !important; }
+  .cursor-dot, .cursor-ring, .tw-cursor { display: none !important; }
 }
